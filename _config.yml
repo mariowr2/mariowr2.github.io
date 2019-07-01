@@ -1,0 +1,179 @@
+
+# Site settings
+
+# NB! Set your site's url, otherwise stuff will break :)
+
+url: "https://le4ker.github.io"
+
+# If you're hosting your site at a Project repository on GitHub pages
+# (https://yourusername.github.io/repository-name)
+# and NOT your user repository (https://yourusername.github.io)
+# then add in the baseurl here, like this: "/repository-name"
+#
+# NB! Without this *nothing* will work, because it's used in every path :)
+
+baseurl: /personal-jekyll-theme
+
+# Google tracking id
+
+google-tracking-id: ""
+
+# Forces https everywhere in your website, except when you serve it locally
+# If you are not hosted on Github Pages, and your host doesn't support https
+# then you should disable it
+
+force-https: True
+
+#############
+# HTML Head #
+#############
+
+lang: "en"
+author: "Mario Mendez"
+title: "Mario Mendez"
+description: "My personal website"
+favicon: "/img/favicon.ico"
+
+################
+# Header layout #
+################
+
+#black-favicon: "/img/black-lab-glass.ico"
+
+background-img: "../img/bg.jpg"
+
+##############################
+# Dynamic Text on the Header #
+##############################
+
+dynamic-typing: True
+shuffle: True # Shuffle the lines.
+loop: True
+loop-count: False # Set False for infinite loop, or set any number for finite loop.
+type-speed: 10
+start-delay: 200
+delete-delay: 5000
+lines: # You can add HTML Tags in the Text
+  - text: "Welcome to my personal website!"
+  - text: "¡Bienvenido a mi página personal!"
+  - text: ";)"
+
+me-img: "/img/me.png"
+
+
+# To use github profile pic uncomment the following line and replace 'user_name'
+# with your github user name.
+
+# me-img: "https://github.com/user_name.png?size=500"
+
+##############################
+# Color the browser elements #
+##############################
+color-browser: "#000000"
+apple-status-bar-style: "black"
+
+
+########
+# Blog #
+########
+
+enable-gesture-navigation: True
+
+post-preview-words: 96
+
+paginate: 5
+
+email-share: True
+fb-share: True
+linkedin-share: True
+disqus-shortname: "personal-jekyll-theme"
+syntax-highlight: True
+
+############
+# Timeline #
+############
+
+events:
+  - image: "/img/timeline/wawa.png"
+    date: "April 2019 - Present"
+    description: "First Co-Op term at the Wawanesa Innovation Lab. Worked on a Blockchain proof of technology using the Corda blockchain framework."
+  - image: "/img/timeline/fira.png"
+    date: "August 2018"
+    description: "Participation in FIRA (Federation of International Robot-soccer Association) robotics competition in Taiwan. Participated along with U of M Snobots team."
+  - image: "/img/timeline/robocup.png"
+    date: "June 2018"
+    description: "Participation in RoboCup robotics competition. Earned first place in technical challenge category with U of M Snobots team."
+  - image: "/img/timeline/aut.png"
+    date: "March 2018"
+    description: "Participation in AUTCup robotics competition in Iran. Earned first place overall in HuroCup category adult size along with U of M's snobots team."
+  - image: "/img/timeline/uofm.png"
+    date: "September 2016 - Present"
+    description: "Started Computer Science at the University of Manitoba."
+# First image of the Timeline
+
+timeline-img: "/img/timeline/born.png"
+
+###########
+# Contact #
+###########
+
+#email: "mendezdm@myumanitoba.ca"
+
+################
+# Author Blurb #
+################
+
+# The author blurb goes underneath blog posts.
+# This works best when your author blurb image has a transparent background, or matches your site background color.
+
+# if the author_blurb is not set, then this feature is skipped
+author_blurb: "Mario Mendez is a passionate Computer Science student living in Canada."
+#author_blurb_image: "/img/me.png"
+
+##################
+# Social Buttons #
+##################
+
+social:
+  - title: "linkedin"
+    url: "https://www.linkedin.com/in/mario-mendez-d/"
+  - title: "github"
+    url: "https://github.com/mariowr2"
+  - title: "envelope"
+    url: "mailto:mendezdm@myumanitoba.ca"
+
+#####################
+#Images used in posts
+######################
+
+slides: /img/posts/example.png
+project_demo: /img/posts/demo.gif
+
+################################################################################
+
+# NB! Tread carefully if you want to change the variables below this point!
+
+# Sections shown in the index page
+
+pages_list:
+  About: 'about'
+  Blog: 'latest-post'
+  Timeline: 'timeline'
+  Contact: 'contact'
+
+# Exclusion list from the generated _site
+
+exclude: ["LICENSE", "README.md", "CONTRIBUTING", "CONTRIBUTORS", "scripts"]
+
+# Pagination path
+
+paginate_path: "blog/page:num/"
+
+# Enable minification SASS
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jemoji
