@@ -54,9 +54,10 @@ type-speed: 10
 start-delay: 200
 delete-delay: 4000
 lines: # You can add HTML Tags in the Text
-  - text: "Welcome to my personal website!"
-  - text: "¡Bienvenido a mi página personal!"
+  - text: ""
   - text: ";)"
+  - text: ""
+  - text: ""
 
 me-img: "/img/me2.png"
 
