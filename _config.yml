@@ -87,7 +87,7 @@ paginate: 10
 email-share: True
 fb-share: True
 linkedin-share: True
-disqus-shortname: "personal-jekyll-theme"
+disqus-shortname: "disqus"
 syntax-highlight: True
 
 ############
@@ -98,6 +98,9 @@ events:
   - image: "/img/timeline/wawa.png"
     date: "April 2019 - Present"
     description: "First Co-Op term at the Wawanesa Innovation Lab. Worked on a Blockchain proof of technology using the Corda blockchain framework."
+  - image: "/img/timeline/htn.png"
+    date: "September 2019"
+    description: "Participation in Hack the North 2019. Built a dApp to allow journalists and activists to share their work in an uncensorable and tamper-proof platform using Ethereum and React."
   - image: "/img/timeline/fira.png"
     date: "August 2018"
     description: "Participation in FIRA (Federation of International Robot-soccer Association) robotics competition in Taiwan. Participated along with U of M Snobots team."
@@ -159,7 +162,7 @@ awards: /img/posts/awards.jpg
 
 pages_list:
   About: 'about'
-  Blog: 'latest-post'
+  Projects: 'latest-post'
   Timeline: 'timeline'
   Contact: 'contact'
 
