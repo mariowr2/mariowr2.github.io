@@ -95,9 +95,12 @@ syntax-highlight: True
 ############
 
 events:
+  - image: "/img/timeline/151.png"
+    date: "January 2020"
+    description: "Interned at 151 Research as a full-stack developer."
   - image: "/img/timeline/wawa.png"
-    date: "April 2019 - Present"
-    description: "First Co-Op term at the Wawanesa Innovation Lab. Worked on a Blockchain proof of technology using the Corda blockchain framework."
+    date: "April 2019 - November 2019"
+    description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs."
   - image: "/img/timeline/htn.png"
     date: "September 2019"
     description: "Participation in Hack the North 2019. Built a dApp to allow journalists and activists to share their work in an uncensorable and tamper-proof platform using Ethereum and React."
