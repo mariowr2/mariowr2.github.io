@@ -46,7 +46,7 @@ background-img: "../img/bg.jpg"
 # Dynamic Text on the Header #
 ##############################
 
-dynamic-typing: True
+dynamic-typing: False
 shuffle: False # Shuffle the lines.
 loop: True
 loop-count: False # Set False for infinite loop, or set any number for finite loop.
@@ -56,8 +56,6 @@ delete-delay: 4000
 lines: # You can add HTML Tags in the Text
   - text: ""
   - text: ";)"
-  - text: ""
-  - text: ""
 
 me-img: "/img/me2.png"
 
@@ -97,7 +95,7 @@ syntax-highlight: True
 events:
   - image: "/img/timeline/151.png"
     date: "January 2020"
-    description: "Interned at 151 Research as a full-stack developer."
+    description: "Intern at 151 Research as a full-stack developer."
   - image: "/img/timeline/wawa.png"
     date: "April 2019 - November 2019"
     description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs."
