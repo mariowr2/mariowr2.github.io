@@ -16,7 +16,8 @@ baseurl:
 
 # Google tracking id
 
-google-tracking-id: ""
+
+google-tracking-id: "UA-156649059-1"
 
 # Forces https everywhere in your website, except when you serve it locally
 # If you are not hosted on Github Pages, and your host doesn't support https
@@ -95,22 +96,22 @@ syntax-highlight: True
 events:
   - image: "/img/timeline/151.png"
     date: "January 2020"
-    description: "Intern at 151 Research as a full-stack developer."
+    description: "Currently working full time as an intern at 151 Research doing full-stack developement."
   - image: "/img/timeline/wawa.png"
     date: "April 2019 - November 2019"
-    description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs."
+    description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs across different technologies, including Blockchain and AR."
   - image: "/img/timeline/htn.png"
     date: "September 2019"
-    description: "Participation in Hack the North 2019. Built a dApp to allow journalists and activists to share their work in an uncensorable and tamper-proof platform using Ethereum and React."
+    description: "Participated in Hack the North 2019. Built a decentralized application to allow journalists and activists to share their work in an uncensorable and tamper-proof platform using Ethereum, React and the IPFS."
   - image: "/img/timeline/fira.png"
     date: "August 2018"
-    description: "Participation in FIRA (Federation of International Robot-soccer Association) robotics competition in Taiwan. Participated along with U of M Snobots team."
+    description: "Participated in FIRA (Federation of International Robot-soccer Association) robotics competition in Taiwan. Participated along with U of M Snobots team."
   - image: "/img/timeline/robocup.png"
     date: "June 2018"
-    description: "Participation in RoboCup robotics competition. Earned first place in technical challenge category with U of M Snobots team."
+    description: "Participated in RoboCup robotics competition. Earned first place in technical challenge category with U of M Snobots team."
   - image: "/img/timeline/aut.png"
     date: "March 2018"
-    description: "Participation in AUTCup robotics competition in Iran. Earned first place overall in HuroCup category adult size along with U of M's snobots team."
+    description: "Participated in AUTCup robotics competition in Iran. Earned first place overall in HuroCup category adult size along with U of M's snobots team."
   - image: "/img/timeline/uofm.png"
     date: "September 2016 - Present"
     description: "Started Computer Science at the University of Manitoba."
