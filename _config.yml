@@ -58,7 +58,7 @@ lines: # You can add HTML Tags in the Text
   - text: ""
   - text: ";)"
 
-me-img: "/img/me2.png"
+me-img: "/img/foto5.png"
 
 
 # To use github profile pic uncomment the following line and replace 'user_name'
@@ -114,7 +114,7 @@ events:
     description: "Participated in AUTCup robotics competition in Iran. Earned first place overall in HuroCup category adult size along with U of M's snobots team."
   - image: "/img/timeline/uofm.png"
     date: "September 2016 - Present"
-    description: "Started Computer Science at the University of Manitoba."
+    description: "Enrolled in the Computer Science program at the University of Manitoba."
 # First image of the Timeline
 
 timeline-img: "/img/timeline/born.png"
