@@ -1,3 +1,19 @@
+# SETUP
+1. `$ sudo apt-get install ruby-full build-essential zlib1g-dev`
+
+2. 
+```
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+3. `$ gem install jekyll bundler`
+
+4. `$ gem install jekyll jekyll-paginate jemoji html-proofer`
+
+
 # { Personal } Jekyll Theme
 ![Build Status](https://travis-ci.org/le4ker/personal-jekyll-theme.svg?branch=master)
 ![license](https://img.shields.io/badge/license-MIT-blue.svg?link=https://github.com/dono-app/ios/blob/master/LICENSE)
@@ -66,33 +82,3 @@ To serve across lan (requires su to forward the port 4000 over lan):
 ```shell
 ./scripts/serve-lan-production
 ```
-
-### Docker
-
-Run using Docker:
-
-```
-docker run --rm -it -p 4000:4000 -v "$PWD:/srv/jekyll" jekyll/jekyll jekyll serve --watch --host "0.0.0.0" --config _config.yml,_config.dev.yml
-```
-
-Run using Docker with Docker Compose:
-```
-docker-compose up
-```
-
-## OSS used in { Personal }
-
-One of the reasons { Personal } is real is the following OSS projects:
-
-  1. [Grayscale](http://startbootstrap.com/template-overviews/grayscale/)
-  2. [hammer.js](https://hammerjs.github.io/)
-  3. [highlightjs](https://highlightjs.org/)
-  4. [RRSSB](https://github.com/kni-labs/rrssb)
-  5. [Timeline](https://github.com/kirbyt/timeline-jekyll-theme)
-  6. [typed.js](https://github.com/mattboldt/typed.js/)
-
-<div style="font-size:16px;margin:0 auto;width:300px">
-    <a href="https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi">
-        <img src="https://blockchain.info/Resources/buttons/donate_64.png"/>
-    </a>
-</div>

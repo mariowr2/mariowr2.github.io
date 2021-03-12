@@ -15,14 +15,11 @@ url: "https://mariomendez.me"
 baseurl: 
 
 # Google tracking id
-
-
 google-tracking-id: "UA-156649059-1"
 
 # Forces https everywhere in your website, except when you serve it locally
 # If you are not hosted on Github Pages, and your host doesn't support https
 # then you should disable it
-
 force-https: True
 
 #############
@@ -77,7 +74,7 @@ apple-status-bar-style: "black"
 # Blog #
 ########
 
-enable-gesture-navigation: True
+enable-gesture-navigation: False
 
 post-preview-words: 32
 
@@ -86,7 +83,6 @@ paginate: 10
 email-share: True
 fb-share: True
 linkedin-share: True
-disqus-shortname: "disqus"
 syntax-highlight: True
 
 ############
@@ -133,7 +129,7 @@ timeline-img: "/img/timeline/born.png"
 # This works best when your author blurb image has a transparent background, or matches your site background color.
 
 # if the author_blurb is not set, then this feature is skipped
-author_blurb: "Mario Mendez is a passionate Computer Science student living in Canada."
+author_blurb: "Mario Mendez is a passionate Computer Science student based in Canada."
 #author_blurb_image: "/img/me.png"
 
 ##################
