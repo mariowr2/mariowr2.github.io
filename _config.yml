@@ -90,9 +90,21 @@ syntax-highlight: True
 ############
 
 events:
+  - image: "img/timeline/agco.png"
+    date: "May 2021"
+    description: "Currently working as a Software Developer at AGCO Winnipeg (formerly 151 Research). My work focuses on full-stack dev, embedded Linux and IoT."
+  - image: "img/timeline/uofm2021.png"
+    date: "May 2021"
+    description: "Graduated from the University of Manitoba with a B. Sc. in Computer Science, Co-op"
+  - image: "/img/timeline/manitoban.jpeg"
+    date: "June 2020 - September 2020"
+    description: "As Junior Research & Technology editor at the Manitoban, I covered local and university events related to research and technology."
   - image: "/img/timeline/151.png"
-    date: "January 2020"
-    description: "Worked as a Software Developer intern at 151 Research doing full-stack developement. Transitioned to part-time until I graduated."
+    date: "January 2020 - May 2021"
+    description: "Worked as a Software Developer intern at 151 Research doing full-stack developement. Transitioned to part-time until I graduated from university."
+  - image: "/img/timeline/iros2019.png"
+    date: "November 2019"
+    description: "Earned second place along with the Autonomous Agents Lab team members at the International Conference on Intelligent Robots and Systems where we developed a musical experience with two humanoid robots."
   - image: "/img/timeline/wawa.png"
     date: "April 2019 - November 2019"
     description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs across different technologies, including Blockchain and AR."
@@ -142,7 +154,7 @@ social:
   - title: "github"
     url: "https://github.com/mariowr2"
   - title: "envelope"
-    url: "mailto:mendezdm@myumanitoba.ca"
+    url: "mailto:mmendezdiaz@outlook.com"
 
 #####################
 #Images used in posts
