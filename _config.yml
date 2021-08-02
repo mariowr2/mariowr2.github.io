@@ -92,7 +92,7 @@ syntax-highlight: True
 events:
   - image: "/img/timeline/151.png"
     date: "January 2020"
-    description: "Currently working full time as an intern at 151 Research doing full-stack developement."
+    description: "Worked as a Software Developer intern at 151 Research doing full-stack developement. Transitioned to part-time until I graduated."
   - image: "/img/timeline/wawa.png"
     date: "April 2019 - November 2019"
     description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs across different technologies, including Blockchain and AR."
