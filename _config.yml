@@ -12,7 +12,7 @@ url: "https://mariomendez.me"
 #
 # NB! Without this *nothing* will work, because it's used in every path :)
 
-baseurl: "https://mariomendez.me"
+baseurl: ""
 
 # Google tracking id
 google-tracking-id: "UA-156649059-1"
