@@ -12,7 +12,7 @@ url: "https://mariomendez.me"
 #
 # NB! Without this *nothing* will work, because it's used in every path :)
 
-baseurl: 
+baseurl: "https://mariomendez.me"
 
 # Google tracking id
 google-tracking-id: "UA-156649059-1"
@@ -49,13 +49,13 @@ shuffle: False # Shuffle the lines.
 loop: True
 loop-count: False # Set False for infinite loop, or set any number for finite loop.
 type-speed: 10
-start-delay: 200
+start-delay: 1000
 delete-delay: 4000
 lines: # You can add HTML Tags in the Text
-  - text: ""
+  - text: "Welcome"
   - text: ";)"
 
-me-img: "/img/foto5.png"
+me-img: "/img/kakto.jpg"
 
 
 # To use github profile pic uncomment the following line and replace 'user_name'
