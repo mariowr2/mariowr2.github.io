@@ -90,9 +90,12 @@ syntax-highlight: True
 ############
 
 events:
+  - image: "img/timeline/evotrux.png"
+    date: "April 2022 - present"
+    description: "Currently working at Evotrux as a full-stack developer/devops engineer/whatever hat is needed for the day. Evotrux is a B2B freight marketplace helping shippers and carriers work together — no middleman required."
   - image: "img/timeline/agco.png"
-    date: "May 2021"
-    description: "Currently working as a Software Developer at AGCO Winnipeg (formerly 151 Research). My work focuses on full-stack dev, embedded Linux and IoT."
+    date: "May 2021 - April 2022"
+    description: "Workeds a Software Developer at AGCO Winnipeg (formerly 151 Research). My work focuses on full-stack dev, embedded Linux and IoT."
   - image: "img/timeline/uofm2021.png"
     date: "May 2021"
     description: "Graduated from the University of Manitoba with a B. Sc. in Computer Science, Co-op"
@@ -141,7 +144,7 @@ timeline-img: "/img/timeline/born.png"
 # This works best when your author blurb image has a transparent background, or matches your site background color.
 
 # if the author_blurb is not set, then this feature is skipped
-author_blurb: "Mario Mendez is a passionate Computer Science student based in Canada."
+author_blurb: "Mario Mendez is a passionate software developer based in Canada."
 #author_blurb_image: "/img/me.png"
 
 ##################
