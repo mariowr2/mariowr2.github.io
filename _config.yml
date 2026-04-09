@@ -92,7 +92,7 @@ syntax-highlight: True
 events:
   - image: "img/timeline/evotrux.png"
     date: "2024 - Present"
-    description: "Building the future of spot-freight, and at the same time building a team!."
+    description: "Building the future of spot freight. Also learning how to build the team I'd want to be part of."
   - image: "img/timeline/evotrux.png"
     date: "April 2022 - 2024"
     description: "Worked at Evotrux as a full-stack developer/devops engineer/whatever hat is needed for the day. Evotrux is a B2B freight marketplace helping shippers and carriers work together — no middleman required."
