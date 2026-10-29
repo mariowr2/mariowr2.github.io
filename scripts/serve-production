@@ -1,3 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
 
-JEKYLL_ENV=production jekyll serve --host "127.0.0.1" --config _config.yml,_config.dev.yml
+bundle exec ruby scripts/generate-archives
+JEKYLL_ENV=production bundle exec jekyll serve --host 127.0.0.1 --config _config.yml,_config.dev.yml "$@"

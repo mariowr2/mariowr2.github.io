@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+# Check local HTML links/assets without depending on external network services.
+require 'nokogiri'
+require 'uri'
+require 'pathname'
+require 'yaml'
+
+root = Pathname.new(ARGV.fetch(0, '_site')).expand_path
+abort "Build directory missing: #{root}" unless root.directory?
+site_host = URI(YAML.load_file('_config.yml').fetch('url')).host
+errors = []
+files = root.glob('**/*.html')
+abort 'No generated HTML found' if files.empty?
+files.each do |file|
+  Nokogiri::HTML(file.read).css('[href], [src]').each do |node|
+    %w[href src].each do |attribute|
+      value = node[attribute]
+      next if value.nil? || value.empty? || value.start_with?('#', '//')
+      begin
+        uri = URI.parse(value.gsub(' ', '%20'))
+        next if uri.scheme && !%w[http https].include?(uri.scheme)
+        next if uri.host && uri.host != site_host
+        next if uri.path.nil? || uri.path.empty?
+        path = URI::DEFAULT_PARSER.unescape(uri.path)
+        target = path.start_with?('/') ? root.join(path.delete_prefix('/')) : file.dirname.join(path)
+        target = target.cleanpath
+        exists = target.file? || target.join('index.html').file?
+        errors << "#{file.relative_path_from(root)}: #{attribute}=#{value.inspect}" unless exists && (target == root || target.to_s.start_with?(root.to_s + '/'))
+      rescue URI::InvalidURIError => e
+        errors << "#{file.relative_path_from(root)}: #{value.inspect}: #{e.message}"
+      end
+    end
+  end
+end
+abort errors.uniq.join("\n") unless errors.empty?
+puts "Checked local links and assets in #{files.length} HTML files (external URLs and fragments skipped)."

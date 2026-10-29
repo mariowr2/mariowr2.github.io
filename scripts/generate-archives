@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# Keep archive pages in source so native GitHub Pages builds can serve them too.
+require 'jekyll'
+require 'fileutils'
+
+Dir.chdir(File.expand_path('..', __dir__))
+site = Jekyll::Site.new(Jekyll.configuration('quiet' => true))
+site.read
+%w[category tag].each do |kind|
+  values = site.posts.docs.flat_map { |post| Array(post.data[kind == 'category' ? 'categories' : 'tags']) }
+  values.group_by { |value| value.downcase }.each do |slug, names|
+    # Preserve the existing lowercase URL format; escape spaces in HTML links.
+    abort "Unsafe archive name: #{slug.inspect}" if slug.match?(%r{[/\\]}) || %w[. ..].include?(slug)
+    directory = kind == 'category' ? 'categories' : 'tags'
+    FileUtils.mkdir_p(directory)
+    path = File.join(directory, "#{slug}.html")
+    title = kind == 'category' ? names.first : slug
+    content = { 'layout' => kind, 'section-type' => kind, 'title' => title }.to_yaml + "---\n## #{kind.capitalize}\n"
+    File.write(path, content) unless File.exist?(path) && File.read(path) == content
+  end
+end
