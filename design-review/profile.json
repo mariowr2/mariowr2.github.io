@@ -1,0 +1,192 @@
+{
+  "personal_interests": [
+    "Cats",
+    "Bicycles",
+    "Multi-day bike trips",
+    "Endurance running",
+    "Mountains as a metaphor for patient growth"
+  ],
+  "personal_experience": [
+    "Has run several marathons",
+    "Has taken multi-day bike trips"
+  ],
+  "name": "Mario Mendez",
+  "headline": "CTO and founder",
+  "description": "Building and learning about software systems, products, teams, communication, and technology.",
+  "source": "User briefs and existing repository, reviewed 2026-10-28",
+  "caveat": "Prototype data. Exact current title, title start date, and preferred biography need confirmation before production.",
+  "links": {
+    "website": "https://mariomendez.me",
+    "github": "https://github.com/mario-evo"
+  },
+  "experience": [
+    {
+      "date": "2024 - Present",
+      "description": "Building the future of spot freight. Also learning how to build the team I'd want to be part of.",
+      "title": "Building Evotrux",
+      "image": "https://mariomendez.me/img/timeline/evotrux.png"
+    },
+    {
+      "date": "April 2022 - 2024",
+      "description": "Worked at Evotrux as a full-stack developer/devops engineer/whatever hat is needed for the day. Evotrux is a B2B freight marketplace helping shippers and carriers work together — no middleman required.",
+      "title": "Full-stack development at Evotrux",
+      "image": "https://mariomendez.me/img/timeline/evotrux.png"
+    },
+    {
+      "date": "May 2021 - April 2022",
+      "description": "Worked as Software Developer at AGCO Winnipeg (formerly 151 Research). My work focused on full-stack dev, cloud, embedded Linux and IoT. Worked with great tech and even cooler people. Also got the chance to live through a startup's glory days and what happens after acquisition.",
+      "title": "Software Developer · AGCO",
+      "image": "https://mariomendez.me/img/timeline/agco.png"
+    },
+    {
+      "date": "May 2021",
+      "description": "Graduated from the University of Manitoba with a B. Sc. in Computer Science, Co-op.",
+      "title": "B.Sc. Computer Science · University of Manitoba",
+      "image": "https://mariomendez.me/img/timeline/uofm2021.png"
+    },
+    {
+      "date": "June 2020 - September 2020",
+      "description": "As Junior Research & Technology editor at the Manitoban, I wrote articles about local and university events related to research and technology.",
+      "title": "Research & Technology Editor · The Manitoban",
+      "image": "https://mariomendez.me/img/timeline/manitoban.jpeg"
+    },
+    {
+      "date": "January 2020 - May 2021",
+      "description": "Worked as a Software Developer intern at 151 Research doing full-stack developement. Learnt full stack development with a dash of IoT and embedded Linux.",
+      "title": "Software Developer Intern · 151 Research",
+      "image": "https://mariomendez.me/img/timeline/151.png"
+    },
+    {
+      "date": "November 2019",
+      "description": "Earned second place along with the Autonomous Agents Lab team members at the International Conference on Intelligent Robots and Systems (IROS) where we developed a musical experience with two humanoid robots.",
+      "title": "IROS · Robot music",
+      "image": "https://mariomendez.me/img/timeline/iros2019.png"
+    },
+    {
+      "date": "April 2019 - November 2019",
+      "description": "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs across different technologies, including Blockchain and AR.",
+      "title": "Innovation Lab · Wawanesa",
+      "image": "https://mariomendez.me/img/timeline/wawa.png"
+    },
+    {
+      "date": "September 2019",
+      "description": "Selected to participate in Hack the North 2019. Built a decentralized application to allow journalists and activists to share their work in an uncensorable and tamper-proof platform using Ethereum, React and the IPFS.",
+      "title": "Hack the North",
+      "image": "https://mariomendez.me/img/timeline/htn.png"
+    },
+    {
+      "date": "August 2018",
+      "description": "Participated in FIRA (Federation of International Robot-soccer Association) robotics competition in Taiwan. Participated along with U of M Snobots team. Won archery category gold!",
+      "title": "FIRA · Taiwan",
+      "image": "https://mariomendez.me/img/timeline/fira.png"
+    },
+    {
+      "date": "June 2018",
+      "description": "Participated in RoboCup robotics competition. Earned first place in technical challenge category with U of M Snobots team.",
+      "title": "RoboCup",
+      "image": "https://mariomendez.me/img/timeline/robocup.png"
+    },
+    {
+      "date": "March 2018",
+      "description": "Participated in AUTCup robotics competition at Amirkabir University of Technology (AUT) in Tehran. Earned first place overall in HuroCup category adult size along with U of M's snobots team.",
+      "title": "AUTCup · Tehran",
+      "image": "https://mariomendez.me/img/timeline/aut.png"
+    },
+    {
+      "date": "September 2016",
+      "description": "Landed in Canada for the first time to pursue the Computer Science program at the University of Manitoba.",
+      "title": "A new chapter in Canada",
+      "image": "https://mariomendez.me/img/timeline/uofm.png"
+    }
+  ],
+  "writing": [
+    {
+      "title": "Road to Seed Round",
+      "date": "Mar 01, 2026",
+      "iso": "2026-03-01",
+      "year": 2026,
+      "slug": "road-to-seed-round",
+      "url": "https://mariomendez.me/startups/2026/03/01/road-to-seed-round.html",
+      "topics": "product teams",
+      "words": 1822,
+      "summary": "From the Evotrux MVP to our seed round: finding a customer, running short on time, and deciding what to build."
+    },
+    {
+      "title": "Lessons from a successful(ish) mvp startup launch",
+      "date": "Oct 20, 2022",
+      "iso": "2022-10-20",
+      "year": 2022,
+      "slug": "lessons-mvp-launch",
+      "url": "https://mariomendez.me/startups/2022/10/20/lessons-mvp-launch.html",
+      "topics": "product teams",
+      "words": 2338,
+      "summary": "What I wish I’d known before launching Evotrux 2.0. Code standards, saying no, observability, and looking after the team."
+    },
+    {
+      "title": "The first Canadian robot rock band",
+      "date": "Nov 10, 2019",
+      "iso": "2019-11-10",
+      "year": 2019,
+      "slug": "IROS",
+      "url": "https://mariomendez.me/robotics/2019/11/10/IROS.html",
+      "topics": "systems experiments",
+      "words": 365,
+      "summary": "We had to make two humanoid robots play a 15-minute set. Here’s how we did it."
+    },
+    {
+      "title": "Qualification video for FIRA 2019 ready!",
+      "date": "Jul 01, 2019",
+      "iso": "2019-07-01",
+      "year": 2019,
+      "slug": "qualification-2019",
+      "url": "https://mariomendez.me/robotics/2019/07/01/qualification-2019.html",
+      "topics": "systems experiments",
+      "words": 58,
+      "summary": "A record from the robotics competition years."
+    },
+    {
+      "title": "fixmynotes.com, make studying easier!",
+      "date": "Dec 16, 2018",
+      "iso": "2018-12-16",
+      "year": 2018,
+      "slug": "fixmynotes",
+      "url": "https://mariomendez.me/projects/2018/12/16/fixmynotes.html",
+      "topics": "experiments systems",
+      "words": 192,
+      "summary": "An experiment in making handwritten notes easier to work with."
+    },
+    {
+      "title": "FIRA 2018 Robotics Competition",
+      "date": "Aug 12, 2018",
+      "iso": "2018-08-12",
+      "year": 2018,
+      "slug": "fira-2018",
+      "url": "https://mariomendez.me/robotics/2018/08/12/fira-2018.html",
+      "topics": "systems experiments",
+      "words": 95,
+      "summary": "Lessons and experiences from a robotics competition in Taiwan."
+    },
+    {
+      "title": "RoboCup 2018",
+      "date": "Jul 08, 2018",
+      "iso": "2018-07-08",
+      "year": 2018,
+      "slug": "robocup",
+      "url": "https://mariomendez.me/robotics/2018/07/08/robocup.html",
+      "topics": "systems experiments",
+      "words": 357,
+      "summary": "Competing with the University of Manitoba Snobots at RoboCup."
+    },
+    {
+      "title": "AUTCup 2018",
+      "date": "Apr 01, 2018",
+      "iso": "2018-04-01",
+      "year": 2018,
+      "slug": "AUT",
+      "url": "https://mariomendez.me/robotics/2018/04/01/AUT.html",
+      "topics": "systems experiments",
+      "words": 608,
+      "summary": "AUTCup in Tehran with the University of Manitoba Snobots."
+    }
+  ]
+}

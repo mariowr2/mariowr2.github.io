@@ -1,0 +1,2 @@
+# Exported source Markdown retains meaningful hard breaks and original final blank lines.
+design-review/text/*.md whitespace=-blank-at-eol,-blank-at-eof

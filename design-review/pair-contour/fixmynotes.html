@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>fixmynotes.com, make studying easier! / Mario Mendez</title><meta name="description" content="Mario Mendez: software, products, teams."><link rel="stylesheet" href="../assets/styles.css"><link rel="describedby" href="../llms.txt"><link rel="alternate" type="application/json" href="../profile.json" title="Prototype professional record"><link rel="alternate" type="text/markdown" href="../text/fixmynotes.md" title="Article Markdown"><script src="../assets/interactions.js" defer></script><link rel="stylesheet" href="../assets/personal.css"><script src="../assets/personal.js" defer></script><link rel="stylesheet" href="../assets/pairings.css"><script src="../assets/pairings.js" defer></script></head>
+<body class="journal personal personal-summit paired-study pair-contour"><a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site-head"><a class="brand" href="index.html">Mario Mendez</a><nav class="nav" aria-label="Main"><a href="index.html">Writing</a><a href="history.html">Experience</a><a class="agent-nav" href="../agents/index.html">Agent version</a><a href="mailto:mmendezdiaz@outlook.com">Email</a></nav></header>
+<main id="main">
+<div class="article-layout"><aside class="article-aside"><a href="index.html">All writing</a><div class="label">Published</div><time datetime="2018-12-16">Dec 16, 2018</time><div class="label">Reading time</div><span>1 minutes</span><div class="toc"><div class="label">Also available</div><a href="../text/fixmynotes.md">Markdown</a><a href="../agents/index.html">Agent briefing</a><a href="history.html">Experience</a></div></aside><article><header class="article-head"><p class="eyebrow">experiments / systems</p><h1>fixmynotes.com, make studying easier!</h1><p class="dek">An experiment in making handwritten notes easier to work with.</p></header><div class="prose">
+            <p>When studying for my courses, I found myself performing the same task over and over: Opening slides,and zooming
+on each in order to be able to read it. This became tiring very quickly, and I wondered if there was anything I could do about it (besides creating a change.org for profs to change their slides), and so this idea became my first ‘solo’ project.</p>
+
+<p>For clarification, my intent was to transform a set of slides that looked like this:</p>
+<div style="text-align: center">
+    <img src="https://mariomendez.me/img/posts/example.png" alt="">
+</div>
+<p><br>
+Into a document where each of these slides would get its own page. For this project I used the Flask framework on top of Nginx inside an Ubuntu virtual machine. The user uploads the document containing the slides he wishes to “fix” . Flask passes the document to a python script which uses OpenCV (A computer vision library) to find the slides, and after finding them, uses the Python image library and other libraries for creating PDF files to carry out the job. The whole process looks like this:</p>
+
+<div style="text-align: center">
+    <img src="https://mariomendez.me/img/posts/demo.gif" alt="">
+</div>
+<p><br></p>
+
+<p>Doing this project was a very challenging and rewarding experience! The source code and setup instructions can be found <a href="https://github.com/mariowr2/fixmynotes.com">here</a>. Pull requests are welcome!</p>
+
+          </div><div class="principle" style="margin-top:35px"><a href="index.html">More writing</a></div></article></div>
+</main><footer class="foot"><span>Mario Mendez</span><div><a href="https://mariomendez.me/feed.xml">RSS</a><a class="agent-footer" href="../agents/index.html">Agent version</a><a href="https://github.com/mario-evo">GitHub</a></div></footer><div class="review-strip"><span>Local preview / Contour study / The runner</span><a href="../pairings.html">Compare layouts</a></div></div></body></html>

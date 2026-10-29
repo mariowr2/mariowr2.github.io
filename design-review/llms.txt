@@ -1,0 +1,29 @@
+# Mario Mendez — design review
+
+> Local design prototypes for Mario's professional website. These are review artifacts, not the canonical public website. Reviewed October 28, 2026.
+
+Mario describes himself as a CTO and founder who loves coding, systems, products, learning, and experimenting with technology and how teams work. Existing posts and the professional timeline are the factual content source. New homepage introductions and article summaries are proposed editorial copy. Topic assignments in these prototypes are provisional. Current title start dates have not been established.
+
+## Human-facing agent handoff
+
+- [For agents](agents/index.html): Copyable briefing prompt and links to the public-record files.
+- [Readable profile](profile.md): Introduction, professional history, and public links.
+- [Writing index](writing.md): All eight posts and Markdown exports.
+
+## Profile and professional history
+
+- [Structured prototype record](profile.json): Biography, existing timeline, writing URLs, and provenance caveat.
+- [Professional history](journal/history.html): Human-readable rendering of the existing timeline.
+
+## Writing
+
+- [Road to Seed Round](text/road-to-seed-round.md): March 2026. Product focus, customers, and the journey to a seed round.
+- [Lessons from an MVP launch](text/lessons-mvp-launch.md): October 2022. Engineering and team lessons from Evotrux 2.0.
+- [The first Canadian robot rock band](text/IROS.md): November 2019. Humanoid robots and music.
+
+## Authority
+
+- [Canonical public website](https://mariomendez.me/): Existing public site; the redesign is not deployed.
+- [Design plan](PLAN.md): Research, proposed production routes, agent access, and evaluation criteria.
+
+No contact, account, or write operations are exposed here. All prototype pages work as static HTML. The llms.txt file is a discovery aid, not access control or a guarantee of agent consumption.

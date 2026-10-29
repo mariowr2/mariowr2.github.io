@@ -4,3 +4,4 @@ cd "$(dirname "$0")/.."
 
 ./scripts/build
 bundle exec ruby scripts/check-links
+bundle exec ruby scripts/check-preserved-routes

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "selected_on": "2026-10-29",
+  "branch": "redesign/thin-ridgeline",
+  "status": "approved visual direction; production implementation pending",
+  "selected_prototype": "design-review/mountain-ridge/index.html",
+  "selected_article": "design-review/mountain-ridge/road-to-seed-round.html",
+  "selected_history": "design-review/mountain-ridge/history.html",
+  "reference_screenshot": "design-review/assets/mountain-ridge-desktop.png",
+  "portrait": {
+    "source": "img/kakto.jpg",
+    "placement": "beside introductory heading",
+    "required": true,
+    "replace_feature_image_independently": true
+  },
+  "feature_media": {
+    "current_kind": "ridgeline",
+    "temporary": true,
+    "supported_production_kinds": [
+      "ridgeline",
+      "image",
+      "none"
+    ],
+    "future_image": null,
+    "note": "User expects to replace the mountain with another personal photo eventually. Do not require that image to start implementation."
+  },
+  "visual_decisions": {
+    "background": "#080b09",
+    "text": "#e5e9e4",
+    "secondary_text": "#a4b0a3",
+    "links": "#9cce8b",
+    "typeface": "IBM Plex Mono, self-hosted",
+    "agent_promotion": "quiet Agent version navigation tab; no large panel or phone banner",
+    "main_illustration_height_px": [
+      52,
+      56
+    ],
+    "local_scroll_window_px": [
+      48,
+      96
+    ],
+    "motion": "small layer separation while visible; reduced motion freezes it"
+  },
+  "prototype_css_in_order": [
+    "design-review/assets/styles.css",
+    "design-review/assets/personal.css",
+    "design-review/assets/pairings.css",
+    "design-review/assets/quiet.css",
+    "design-review/assets/mountains.css"
+  ],
+  "selected_behavior_source": "design-review/assets/mountains.js",
+  "selected_svg_sources": [
+    "design-review/art/mountain-ridge-main.svg",
+    "design-review/art/mountain-ridge-header.svg"
+  ],
+  "font_sources": [
+    "design-review/assets/fonts/IBMPlexMono-Regular.ttf",
+    "design-review/assets/fonts/IBMPlexMono-Medium.ttf",
+    "design-review/assets/fonts/IBM-Plex-Mono-OFL.txt"
+  ],
+  "hosting_verified_on": "2026-10-29",
+  "hosting": {
+    "provider": "GitHub Pages",
+    "build_type": "legacy",
+    "source_branch": "master",
+    "source_path": "/",
+    "custom_domain": "mariomendez.me",
+    "https_enforced": true
+  },
+  "public_site_changed": false,
+  "implementation_handoff": "design-review/HANDOFF.md",
+  "url_baseline": "design-review/production-routes.json"
+}

@@ -26,7 +26,7 @@ Run these from the repository root:
 | `./scripts/serve-lan` | Preview on the local network at your machine's IP, port 4000 |
 | `./scripts/serve-lan-production` | LAN preview with production template behavior |
 | `./scripts/build` | Generate archive sources and build production output into `_site/` |
-| `./scripts/check` | Production build followed by local HTML link/asset checks |
+| `./scripts/check` | Production build, local links/assets, and preserved public URLs |
 | `bundle exec ruby scripts/generate-archives` | Refresh category and tag source pages |
 | `./scripts/newpost my-post-slug` | Create a post skeleton; edit its front matter and body |
 
@@ -55,6 +55,26 @@ The baseline build succeeds but reports Sass deprecations (`@import` and `darken
 
 ## Hosting
 
-The repository name and `CNAME` indicate GitHub Pages with custom domain `mariomendez.me`. Actual Pages source/branch settings live in GitHub and have not been verified. The checked-in workflow validates changes; it **does not deploy**. Confirm hosting settings before changing the publishing pipeline. Native GitHub Pages may use different dependency versions from the locally locked Jekyll 4 setup; use a custom build/deploy workflow if exact parity is required.
+The repository name and `CNAME` indicate GitHub Pages with custom domain `mariomendez.me`. Pages settings were verified read-only on October 29, 2026: legacy build, source `master` at `/`, custom domain `mariomendez.me`, and HTTPS enforced. The checked-in workflow validates changes; it **does not deploy**. Merging into `master` can publish via the separate native Pages build. Confirm these settings again before changing the publishing pipeline. Native GitHub Pages may use different dependency versions from the locally locked Jekyll 4 setup; use a custom build/deploy workflow if exact parity is required.
 
 `scripts/integrate-personal` is an inherited upstream merge helper, not part of the normal development workflow. Do not run it during routine maintenance.
+
+## Selected redesign and implementation handoff
+
+The selected direction is **Thin Ridgeline**, built on A Measured Ascent: dark background, off-white text, restrained green links, self-hosted IBM Plex Mono, and the original portrait beside the introduction. The mountain is temporary optional media and should be replaceable with another personal photo. “Agent version” is a quiet top-level navigation link.
+
+Start implementation with [the handoff](design-review/HANDOFF.md) and [the recorded selection](design-review/selected.json). The approved [homepage](design-review/mountain-ridge/index.html), [reading view](design-review/mountain-ridge/road-to-seed-round.html), [history view](design-review/mountain-ridge/history.html), and desktop/phone captures are committed references. Older galleries are design history, not competing specifications.
+
+This checkpoint preserves the prototype; the production Jekyll templates still use the old theme. The handoff maps the selected source to real layouts/data/assets, describes human/agent publishing from shared content, and gives an ordered migration and release checklist.
+
+Run `./scripts/check` before committing. It now also checks [the existing public URL contract](design-review/production-routes.json): 61 required outputs, including all eight current post routes, discovery/hosting files, and original images. Missing paths fail local checks and the existing CI workflow. Preserve a route or add its intentional compatibility redirect when changing the structure.
+
+To preview the selected artifact, open `design-review/mountain-ridge/index.html` directly, or serve the repository:
+
+```sh
+python3 -m http.server 4173 --bind 127.0.0.1
+```
+
+Then visit http://127.0.0.1:4173/design-review/mountain-ridge/ . Run `./scripts/render-designs` to regenerate review HTML and agent examples from the current posts and timeline. Shared ERB source is in `design-review/templates/`, with licensed fonts, SVGs, styles, and scripts under `design-review/`. The directory is excluded from production output.
+
+Optional browser checks and captures use Python Playwright outside the site runtime. See [QA.md](design-review/QA.md) for setup and limits; `scripts/check-designs.py` checks the whole review and `scripts/capture-mountains.py` covers the selected portrait/layout, low graphic, on-screen timing, and reduced motion. Preserve/adapt these checks to the real URLs during the port.

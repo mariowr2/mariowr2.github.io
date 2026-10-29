@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" role="img" aria-labelledby="main-art-title"><title id="main-art-title">A headlamp following a mountain trail at night above a small camp</title>
+<g class="art-stars"><circle cx="32" cy="31" r="1"/><circle cx="87" cy="20" r=".8"/><circle cx="132" cy="40" r=".8"/><circle cx="233" cy="15" r=".8"/><circle cx="319" cy="62" r="1"/><circle cx="338" cy="24" r=".7"/></g>
+<g data-parallax="back"><circle class="art-moon" cx="278" cy="45" r="17"/><path class="art-back" d="M5 146L61 82L96 119L153 47L195 102L230 74L295 141L329 105L355 145"/></g>
+<path class="art-night-fill" d="M6 193L66 136L110 161L193 50L239 124L269 99L354 199L354 225H6Z"/>
+<g class="art-ridge"><path d="M6 193L66 136L110 161L193 50L239 124L269 99L354 199M193 50L184 94L201 81L219 117M269 99L266 124L281 119"/></g>
+<g class="art-contour"><path d="M11 207Q81 179 118 194T203 177T286 192T355 210M23 220Q84 194 132 207T216 193T298 211"/></g>
+<g class="art-tent"><path d="M36 198L58 173L78 198ZM58 173L63 198M52 198L58 185L63 198M29 199H87"/><path d="M71 198L58 173L85 180L99 198Z"/></g>
+<path data-main-route d="M91 200Q124 173 153 183T195 156Q164 147 188 131T213 108L197 100L193 56" class="art-route"/><path data-main-progress d="M91 200Q124 173 153 183T195 156Q164 147 188 131T213 108L197 100L193 56" class="art-route-active"/><g data-main-marker data-kind="hiker" transform="translate(30 194)"><circle cx="0" cy="-17" r="2.7" class="art-person"/><path d="M0-13L-2-6M-1-12L4-8L7-12M7-13L6 0M-3-12L-6-11L-5-6" class="art-person"/><path data-main-legs d="M-2-6L-6 0M-2-6L3-1" class="art-person"/></g><circle data-lamp cx="0" cy="0" r="11" class="art-lamp"/></svg>
