@@ -1,247 +1,139 @@
-
-# Site settings
-
-# NB! Set your site's url, otherwise stuff will break :)
-
-url: "https://mariomendez.me"
-
-# If you're hosting your site at a Project repository on GitHub pages
-# (https://yourusername.github.io/repository-name)
-# and NOT your user repository (https://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-#
-# NB! Without this *nothing* will work, because it's used in every path :)
-
-baseurl: ""
-
-# Google tracking id
-google-tracking-id: "UA-156649059-1"
-
-# Forces https everywhere in your website, except when you serve it locally
-# If you are not hosted on Github Pages, and your host doesn't support https
-# then you should disable it
-force-https: True
-
-#############
-# HTML Head #
-#############
-
-lang: "en"
-author: "Mario Mendez"
-title: "Mario Mendez"
-description: "Always shipping. Always a work in progress."
+# Production metadata, shared content, and build settings.
+---
+url: https://mariomendez.me
+baseurl: ''
+lang: en
+author: Mario Mendez
+title: Mario Mendez
+description: Always shipping. Always a work in progress.
 favicon: "/img/favicon.ico"
-
-################
-# Header layout #
-################
-
-#black-favicon: "/img/black-lab-glass.ico"
-
-background-img: "../img/bg.jpg"
-
-##############################
-# Dynamic Text on the Header #
-##############################
-
-dynamic-typing: False
-shuffle: False # Shuffle the lines.
-loop: True
-loop-count: False # Set False for infinite loop, or set any number for finite loop.
-type-speed: 10
-start-delay: 1000
-delete-delay: 4000
-lines: # You can add HTML Tags in the Text
-  - text: "Welcome"
-  - text: ";)"
-
-me-img: "/img/kakto.jpg"
-
-
-# To use github profile pic uncomment the following line and replace 'user_name'
-# with your github user name.
-
-# me-img: "https://github.com/user_name.png?size=500"
-
-##############################
-# Color the browser elements #
-##############################
-color-browser: "#000000"
-apple-status-bar-style: "black"
-
-
-########
-# Blog #
-########
-
-enable-gesture-navigation: False
-
-post-preview-words: 32
-
 paginate: 10
-
-email-share: True
-fb-share: True
-linkedin-share: True
-syntax-highlight: True
-
-############
-# Timeline #
-############
-
-events:
-  - image: "img/timeline/evotrux.png"
-    id: evotrux-cto
-    title: "CTO, Co-founder"
-    post: road-to-seed-round
-    date: "2024 - Present"
-    description: |-
-      Graduated from dev to co-founder.
-
-      My focus is still on building a great product, as well as growing a team I'd want to be a part of.
-  - image: "img/timeline/evotrux.png"
-    id: evotrux-lead-developer
-    title: "Lead Developer"
-    post: lessons-mvp-launch
-    date: "April 2022–2023"
-    description: "Joined Evotrux as a full-stack developer/devops engineer/whatever hat is needed for the day. Evotrux is a B2B freight marketplace helping shippers and carriers work together — no middleman required."
-  - image: "img/timeline/agco.png"
-    id: agco
-    title: "Software Developer · AGCO"
-    date: "May 2021 - April 2022"
-    description: "Worked as a Software Developer at AGCO Winnipeg (formerly 151 Research). My work focused on full-stack dev, cloud, embedded Linux and IoT. Worked with great tech and even cooler people. Also got the chance to live through a startup's glory days and what happens after acquisition."
-  - image: "img/timeline/uofm2021.png"
-    id: manitoba-graduation
-    title: "B.Sc. Computer Science · University of Manitoba"
-    date: "May 2021"
-    description: "Graduated from the University of Manitoba with a B.Sc. in Computer Science, Co-op."
-  - image: "/img/timeline/manitoban.jpeg"
-    id: manitoban
-    title: "Research & Technology Editor · The Manitoban"
-    date: "June 2020 - September 2020"
-    description: "As a Junior Research & Technology editor at the Manitoban, I wrote articles about local and university events related to research and technology."
-  - image: "/img/timeline/151.png"
-    id: 151-research
-    title: "Software Developer Intern · 151 Research"
-    date: "January 2020 - May 2021"
-    description: "Worked as a Software Developer intern at 151 Research doing full-stack development. Learnt full-stack development with a dash of IoT and embedded Linux."
-  - image: "/img/timeline/iros2019.png"
-    id: iros-2019
-    title: "IROS · Robot music"
-    post: IROS
-    date: "November 2019"
-    description: "Earned second place along with the Autonomous Agents Lab team members at the International Conference on Intelligent Robots and Systems (IROS) where we developed a musical experience with two humanoid robots."
-  - image: "/img/timeline/wawa.png"
-    id: wawanesa
-    title: "R&D Developer · Wawanesa Insurance"
-    date: "April 2019 - November 2019"
-    description: "Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack POCs across different technologies, including Blockchain and AR."
-  - image: "/img/timeline/htn.png"
-    id: hack-the-north-2019
-    title: "Hack the North"
-    date: "September 2019"
-    description: "Selected to participate in Hack the North 2019. Built a decentralized application to allow journalists and activists to share their work in an uncensorable and tamper-proof platform using Ethereum, React and the IPFS."
-  - image: "/img/timeline/fira.png"
-    id: fira-2018
-    title: "FIRA · Taiwan"
-    date: "August 2018"
-    description: "Participated in FIRA (Federation of International Robot-soccer Association) robotics competition in Taiwan. Participated along with U of M Snobots team. Won archery category gold!"
-  - image: "/img/timeline/robocup.png"
-    id: robocup-2018
-    title: "RoboCup"
-    date: "June 2018"
-    description: "Participated in RoboCup robotics competition. Earned first place in technical challenge category with U of M Snobots team."
-  - image: "/img/timeline/aut.png"
-    id: autcup-2018
-    title: "AUTCup · Tehran"
-    date: "March 2018"
-    description: "Participated in AUTCup robotics competition at Amirkabir University of Technology (AUT) in Tehran. Earned first place overall in HuroCup category adult size along with U of M's snobots team."
-  - image: "/assets/images/university-of-manitoba.png"
-    id: autonomous-agents-lab
-    title: "Autonomous Agents Lab"
-    date: "2017"
-    description: "Joined the U of M Autonomous Agents Lab under Dr. Anderson and Dr. Meng-Cheng Lau. The experiences of belonging to the lab were amongst the most important of my university education. I am forever grateful for the opportunity to work in that environment."
-  - image: "/img/timeline/uofm.png"
-    id: canada-arrival
-    title: "A new chapter in Canada"
-    date: "September 2016"
-    description: "Flew to Canada for the first time in my life to pursue a degree in Computer Science."
-# First image of the Timeline
-
-timeline-img: "/img/timeline/born.png"
-
-###########
-# Contact #
-###########
-
-#email: "mendezdm@myumanitoba.ca"
-
-################
-# Author Blurb #
-################
-
-# The author blurb goes underneath blog posts.
-# This works best when your author blurb image has a transparent background, or matches your site background color.
-
-# if the author_blurb is not set, then this feature is skipped
-author_blurb: "Mario Mendez is a passionate software developer based in Canada."
-#author_blurb_image: "/img/me.png"
-
-##################
-# Social Buttons #
-##################
-
-social:
-  - title: "linkedin"
-    url: "https://www.linkedin.com/in/mario-mendez-d/"
-  - title: "github"
-    url: "https://github.com/mario-evo"
-  - title: "envelope"
-    url: "mailto:mmendezdiaz@outlook.com"
-
-#####################
-#Images used in posts
-######################
-
-slides: /img/posts/example.png
-project_demo: /img/posts/demo.gif
-awards: /img/posts/awards.jpg
-
-################################################################################
-
-# NB! Tread carefully if you want to change the variables below this point!
-
-# Sections shown in the index page
-
-pages_list:
-  About: 'about'
-  Projects: 'latest-post'
-  Timeline: 'timeline'
-  Contact: 'contact'
-
-# Exclusion list from the generated _site
-
-exclude: ["LICENSE", "README.md", "CONTRIBUTING", "CONTRIBUTORS", "scripts", "AGENTS.md", "Gemfile", "Gemfile.lock", "vendor", "design-review", "css", "js"]
-
-# Pagination path
-
-paginate_path: "blog/page:num/"
-
-# Enable minification SASS
-
-sass:
-  style: compressed
-
+paginate_path: blog/page:num/
 plugins:
-  - jekyll-paginate
-  - jemoji
+- jekyll-paginate
+- jemoji
+slides: "/img/posts/example.png"
+project_demo: "/img/posts/demo.gif"
+awards: "/img/posts/awards.jpg"
+social:
+- title: linkedin
+  url: https://www.linkedin.com/in/mario-mendez-d/
+- title: github
+  url: https://github.com/mario-evo
+- title: envelope
+  url: mailto:mmendezdiaz@outlook.com
+home_featured:
+- road-to-seed-round
+- lessons-mvp-launch
+- IROS
+events:
+- image: img/timeline/evotrux.png
+  id: evotrux-cto
+  title: CTO, Co-founder
+  post: road-to-seed-round
+  date: 2024 - Present
+  description: |-
+    Graduated from dev to co-founder.
 
-# Selected homepage order and compact work history.
-home_featured: [road-to-seed-round, lessons-mvp-launch, IROS]
-home_roles:
-  - name: Evotrux
-    period: 2022–present
-  - name: AGCO / 151 Research
-    period: 2020–2022
-  - name: Robotics & research
-    period: 2018–2019
+    My focus is still on building a great product, as well as growing a team I'd want to be a part of.
+- image: img/timeline/evotrux.png
+  id: evotrux-lead-developer
+  title: Lead Developer
+  post: lessons-mvp-launch
+  date: April 2022–2023
+  description: Joined Evotrux as a full-stack developer/devops engineer/whatever hat
+    is needed for the day. Evotrux is a B2B freight marketplace helping shippers and
+    carriers work together — no middleman required.
+- image: img/timeline/agco.png
+  id: agco
+  title: Software Developer · AGCO
+  date: May 2021 - April 2022
+  description: Worked as a Software Developer at AGCO Winnipeg (formerly 151 Research).
+    My work focused on full-stack dev, cloud, embedded Linux and IoT. Worked with
+    great tech and even cooler people. Also got the chance to live through a startup's
+    glory days and what happens after acquisition.
+- image: img/timeline/uofm2021.png
+  id: manitoba-graduation
+  title: B.Sc. Computer Science · University of Manitoba
+  date: May 2021
+  description: Graduated from the University of Manitoba with a B.Sc. in Computer
+    Science, Co-op.
+- image: "/img/timeline/manitoban.jpeg"
+  id: manitoban
+  title: Research & Technology Editor · The Manitoban
+  date: June 2020 - September 2020
+  description: As a Junior Research & Technology editor at the Manitoban, I wrote
+    articles about local and university events related to research and technology.
+- image: "/img/timeline/151.png"
+  id: 151-research
+  title: Software Developer Intern · 151 Research
+  date: January 2020 - May 2021
+  description: Worked as a Software Developer intern at 151 Research doing full-stack
+    development. Learnt full-stack development with a dash of IoT and embedded Linux.
+- image: "/img/timeline/iros2019.png"
+  id: iros-2019
+  title: IROS · Robot music
+  post: IROS
+  date: November 2019
+  description: Earned second place along with the Autonomous Agents Lab team members
+    at the International Conference on Intelligent Robots and Systems (IROS) where
+    we developed a musical experience with two humanoid robots.
+- image: "/img/timeline/wawa.png"
+  id: wawanesa
+  title: R&D Developer · Wawanesa Insurance
+  date: April 2019 - November 2019
+  description: Interned at the Wawanesa Innovation Lab. Worked on multiple full-stack
+    POCs across different technologies, including Blockchain and AR.
+- image: "/img/timeline/htn.png"
+  id: hack-the-north-2019
+  title: Hack the North
+  date: September 2019
+  description: Selected to participate in Hack the North 2019. Built a decentralized
+    application to allow journalists and activists to share their work in an uncensorable
+    and tamper-proof platform using Ethereum, React and the IPFS.
+- image: "/img/timeline/fira.png"
+  id: fira-2018
+  title: FIRA · Taiwan
+  date: August 2018
+  description: Participated in FIRA (Federation of International Robot-soccer Association)
+    robotics competition in Taiwan. Participated along with U of M Snobots team. Won
+    archery category gold!
+- image: "/img/timeline/robocup.png"
+  id: robocup-2018
+  title: RoboCup
+  date: June 2018
+  description: Participated in RoboCup robotics competition. Earned first place in
+    technical challenge category with U of M Snobots team.
+- image: "/img/timeline/aut.png"
+  id: autcup-2018
+  title: AUTCup · Tehran
+  date: March 2018
+  description: Participated in AUTCup robotics competition at Amirkabir University
+    of Technology (AUT) in Tehran. Earned first place overall in HuroCup category
+    adult size along with U of M's snobots team.
+- image: "/assets/images/university-of-manitoba.png"
+  id: autonomous-agents-lab
+  title: Autonomous Agents Lab
+  date: '2017'
+  description: Joined the U of M Autonomous Agents Lab under Dr. Anderson and Dr.
+    Meng-Cheng Lau. The experiences of belonging to the lab were amongst the most
+    important of my university education. I am forever grateful for the opportunity
+    to work in that environment.
+- image: "/img/timeline/uofm.png"
+  id: canada-arrival
+  title: A new chapter in Canada
+  date: September 2016
+  description: Flew to Canada for the first time in my life to pursue a degree in
+    Computer Science.
+exclude:
+- LICENSE
+- README.md
+- CONTRIBUTING
+- CONTRIBUTORS
+- scripts
+- docs
+- _site
+- AGENTS.md
+- Gemfile
+- Gemfile.lock
+- vendor

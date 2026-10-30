@@ -1,5 +1,5 @@
 """Optional production browser checks. Serve _site on port 4175 first.
-Run with the external Playwright installation documented in design-review/QA.md.
+Run with the external Playwright installation documented in docs/QA.md.
 """
 from pathlib import Path
 import json
@@ -8,7 +8,7 @@ from playwright.sync_api import sync_playwright
 
 base = sys.argv[1] if len(sys.argv) > 1 else 'http://127.0.0.1:4175'
 root = Path(__file__).resolve().parents[1]
-routes = json.loads((root / 'design-review/production-routes.json').read_text())
+routes = json.loads((root / 'docs/production-routes.json').read_text())
 posts = [post['url'] for post in routes['posts']]
 errors = []
 
@@ -49,33 +49,8 @@ with sync_playwright() as p:
         assert page.locator('.chapter').count() == 3
         assert page.locator('.post').count() == 5
         assert page.locator('.portrait-photo').evaluate('(e)=>e.complete && e.naturalWidth>0')
-        if page.locator('.paired-scene').count():
-            assert page.locator('.paired-scene').bounding_box()['height'] <= 56.1
-            start = float(page.locator('body').get_attribute('data-mountain-start'))
-            length = float(page.locator('body').get_attribute('data-mountain-range'))
-            assert 48 <= length <= 96
-            original = page.locator('.paired-scene svg').inner_html()
-            states = []
-            for progress in [.2,.8]:
-                scroll(page,start+length*progress)
-                scene = page.locator('.paired-scene').bounding_box()
-                head = page.locator('.site-head').bounding_box()
-                assert scene['y'] >= head['y']+head['height'], (width,'motion hidden')
-                assert scene['y']+scene['height'] <= height, (width,'motion below viewport')
-                states.append(page.locator('.paired-scene svg').inner_html())
-            assert states[0] != states[1]
-            scroll(page,0)
-            assert page.locator('.paired-scene svg').inner_html() == original
-            scroll(page,10000)
-            page.wait_for_function("getComputedStyle(document.querySelector('.paired-header')).opacity === '1'")
-            if width <= 900:
-                head = page.locator('.paired-header').bounding_box()
-                nav = page.locator('.nav').bounding_box()
-                assert head['y']+head['height'] <= nav['y']
-            scroll(page,0)
-        elif page.locator('.feature-image:visible').count():
+        if page.locator('.feature-image:visible').count():
             assert page.locator('.feature-image:visible img').evaluate('(e)=>e.complete && e.naturalWidth>0')
-            assert page.locator('script[src*="ridgeline"]').count() == 0
         if page.locator('.feature-image:visible').count():
             photo = page.locator('.feature-image:visible').bounding_box()
             side = page.locator('.side').bounding_box()
@@ -92,14 +67,6 @@ with sync_playwright() as p:
         if width in [390,1440]:
             page.locator('.skip').evaluate('(e) => e.blur()')
             page.screenshot(path=f'/tmp/mario-production-{width}.png',full_page=True)
-    reduced = browser.new_page(reduced_motion='reduce')
-    reduced.goto(base + '/')
-    settle(reduced)
-    if reduced.locator('.paired-scene').count():
-        before = reduced.locator('.paired-scene svg').inner_html()
-        scroll(reduced,500)
-        assert reduced.locator('.paired-scene svg').inner_html() == before
-        assert not reduced.locator('.paired-header').is_visible()
     nojs = browser.new_page(java_script_enabled=False)
     nojs.goto(base + '/')
     assert nojs.locator('.portrait-photo').is_visible()
@@ -118,4 +85,4 @@ with sync_playwright() as p:
     page.wait_for_function("document.querySelector('#copy-status').textContent.length > 0")
     browser.close()
 assert not errors, errors
-print('PASS: production routes, four viewport sizes, structured data, portrait, writing, feature media (ridgeline motion when enabled), reduced motion, no-JS, prompt copy.')
+print('PASS: production routes, four viewport sizes, structured data, portrait, writing, feature media, no-JS, prompt copy.')

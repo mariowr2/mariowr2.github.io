@@ -48,7 +48,7 @@ end
   Nokogiri::XML(File.read(File.join(root, name))) { |config| config.strict }
 end
 JSON.parse(File.read(File.join(root, 'manifest.json')))
-%w[design-review scripts AGENTS.md Gemfile Gemfile.lock README.md .github].each do |path|
+%w[_site docs design-review scripts AGENTS.md Gemfile Gemfile.lock README.md .github].each do |path|
   abort "Development artifact published: #{path}" if File.exist?(File.join(root, path))
 end
 Dir.glob(File.join(root, '**', '*.html')).each do |path|

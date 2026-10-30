@@ -18,13 +18,13 @@ expected_posts = len(list((root / '_posts').glob('*.md')))
 with TemporaryDirectory(prefix='mario-media-') as tmp:
     source, output = Path(tmp) / 'source', Path(tmp) / 'output'
     shutil.copytree(root, source, ignore=shutil.ignore_patterns(
-        '.git', '_site', '.bundle', '.jekyll-cache', 'vendor', 'design-review'))
+        '.git', '_site', '.bundle', '.jekyll-cache', 'vendor', 'docs'))
     server = ThreadingHTTPServer(('127.0.0.1', 0), partial(SimpleHTTPRequestHandler, directory=str(output)))
     Thread(target=server.serve_forever, daemon=True).start()
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch()
-            for kind in ['ridgeline', 'image', 'none']:
+            for kind in ['image', 'none']:
                 profile = (root / '_data/profile.yml').read_text().split('feature_media:')[0]
                 profile += f'feature_media:\n  kind: {kind}\n  src: /img/bg.jpg\n  alt: Mountain landscape\n  width: 1200\n  height: 800\n'
                 (source / '_data/profile.yml').write_text(profile)
@@ -39,8 +39,6 @@ with TemporaryDirectory(prefix='mario-media-') as tmp:
                     page.evaluate('document.fonts.ready')
                     assert page.locator('.portrait-photo').is_visible()
                     assert page.locator('.chapter,.post').count() == expected_posts
-                    assert page.locator('script[src*="ridgeline"]').count() == (1 if kind == 'ridgeline' else 0)
-                    assert page.locator('.paired-scene').count() == (1 if kind == 'ridgeline' else 0)
                     assert page.locator('.feature-image:visible').count() == (1 if kind == 'image' else 0)
                     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
                 assert not errors, errors
@@ -53,5 +51,5 @@ record = json.loads((root / '_site/profile.json').read_text())
 assert len(record['experience']) == len(expected_history)
 assert len(record['writing']) == expected_posts
 assert [event['title'] for event in record['experience']] == [event['title'] for event in expected_history]
-assert not (root / '_site/design-review').exists()
-print('PASS: ridgeline/image/none at four widths, portrait and writing retained, controller scoped to ridgeline, history/export parity.')
+assert not (root / '_site/docs').exists()
+print('PASS: image/none at four widths, portrait and writing retained, history/export parity.')

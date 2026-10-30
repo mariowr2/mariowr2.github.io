@@ -1,6 +1,0 @@
-<!-- Legacy social list, using the same accessible external-link treatment. -->
-<ul class="list-inline social-buttons">
-{% for network in site.social %}
-<li>{% if network.title == 'github' %}{% include external-link.html url=network.url label='GitHub' %}{% elsif network.title == 'linkedin' %}{% include external-link.html url=network.url label='LinkedIn' %}{% else %}<a href="{{ network.url }}">Email</a>{% endif %}</li>
-{% endfor %}
-</ul>

@@ -6,7 +6,7 @@ require 'pathname'
 Dir.chdir(File.expand_path('..', __dir__))
 root = Pathname.new(ARGV.fetch(0, '_site')).expand_path
 abort "Build directory missing: #{root}" unless root.directory?
-baseline = JSON.parse(File.read('design-review/production-routes.json'))
+baseline = JSON.parse(File.read('docs/production-routes.json'))
 missing = baseline.fetch('required_files').reject do |entry|
   target = root.join(entry.fetch('output')).cleanpath
   target.to_s.start_with?(root.to_s + '/') && target.file?
