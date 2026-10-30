@@ -32,7 +32,15 @@ Run these from the repository root:
 
 Serve/build scripts accept additional Jekyll arguments, for example `./scripts/serve --port 4001`. Restart the server after configuration changes. Adding a new tag or category also requires restarting the preview or running the archive generator before Jekyll rebuilds.
 
-Local previews layer `_config.dev.yml` over `_config.yml`, disable HTTPS redirection, and use a local canonical URL. For another port or LAN hostname, supply `--url http://YOUR_HOST:PORT`. Production builds use only `_config.yml` and its public domain. LAN preview binds to all interfaces; firewall changes, if needed, are managed outside these scripts.
+Local previews layer `_config.dev.yml` over `_config.yml`, disable HTTPS redirection, and use a local canonical URL. Jekyll development mode derives absolute URLs from its host and port; `--url` is not supported by the locked Jekyll version. Production builds use only `_config.yml` and its public domain. Production-mode previews on nondefault ports need a matching `url` in an additional YAML config file. LAN preview binds to all interfaces; firewall changes, if needed, are managed outside these scripts.
+
+For the redesign preview with working local agent prompt/download links and automatic template updates:
+
+```sh
+./scripts/serve --port 4175 --destination /tmp/mario-site-preview
+```
+
+Open http://127.0.0.1:4175. The separate destination keeps production checks from replacing the preview files. Development exports and the copyable prompt use `http://localhost:4175`; the same files in production use `https://mariomendez.me`. Serving a production `_site/` build through a generic static server keeps production URLs in the prompt and exports; those public endpoints will return 404 until the redesign is deployed. Use the Jekyll development preview to test local handoff links. A remote agent cannot access your machine’s localhost endpoints.
 
 ## Structure
 
@@ -57,7 +65,7 @@ Run `./scripts/check` before committing, and commit any generated category/tag p
 
 The redesigned shell uses local fonts, CSS, and optional vanilla JavaScript. Inherited analytics, comments, sharing widgets, Bootstrap, jQuery, and external font services are absent from the shared layouts. Historical posts retain their text, attribution, and video URLs. Broken university-hosted photos have been recovered from the Internet Archive and are served locally; their original URLs and archived copies are recorded in `design-review/recovered-media.json`. Copied third-party sharing controls/scripts were removed. The retired article source links now point to archived originals, and conference links point to current official history pages. Remote video availability remains outside deterministic local checks.
 
-Optional browser verification: serve `_site/` at `http://127.0.0.1:4175`, then run `scripts/check-redesign.py` with Python Playwright installed outside the site runtime (see `design-review/QA.md`). It checks all posts and principal pages at 320, 390, 768, and 1440px, visible ridgeline movement, reversal, masthead separation, reduced motion, no-JavaScript reading, structured data, and prompt copy. Desktop/phone screenshots go to `/tmp/mario-production-{width}.png`. `scripts/check-redesign-media.py` builds ridgeline/image/none configurations in temporary directories and verifies they retain the portrait and writing; it also checks source/history parity. `./scripts/check` validates Markdown/JSON parity, structured data, XML, responsive image targets, social-link behavior, and exclusion of development artifacts. Both require permission to launch Chromium outside a restricted sandbox.
+Optional browser verification: serve `_site/` at `http://127.0.0.1:4175`, then run `scripts/check-redesign.py` with Python Playwright installed outside the site runtime (see `design-review/QA.md`). It checks all posts and principal pages at 320, 390, 768, and 1440px, visible ridgeline movement, reversal, masthead separation, reduced motion, no-JavaScript reading, structured data, and prompt copy. Desktop/phone screenshots go to `/tmp/mario-production-{width}.png`. `scripts/check-redesign-media.py` builds ridgeline/image/none configurations in temporary directories and verifies they retain the portrait and writing; it also checks source/history parity. `./scripts/check` validates Markdown/JSON parity, structured data, XML, responsive image targets, social-link behavior, and exclusion of development artifacts. Both require permission to launch Chromium outside a restricted sandbox. `scripts/check-agent-links.py http://127.0.0.1:4175` checks actual HTTP responses for the agent screen, prompt URLs, downloads, and every linked HTML/Markdown article pair; run it against the development preview above, or against the public domain after release.
 
 ## Hosting
 

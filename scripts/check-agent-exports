@@ -16,6 +16,17 @@ site.read
 abort 'Profile JSON contains HTML' unless profile.fetch('personal') == Nokogiri::HTML.fragment(site.data.fetch('profile').fetch('about')).text
 abort 'History count differs from source' unless profile.fetch('experience').length == site.config.fetch('events').length
 abort 'Writing count differs from source' unless profile.fetch('writing').length == site.posts.docs.length
+agent_page = Nokogiri::HTML(File.read(File.join(root, 'for-agents', 'index.html')))
+prompt = agent_page.at_css('#agent-prompt')&.text.to_s
+prompt_urls = prompt.scan(%r{https?://[^\s<>]+})
+expected_prompt_urls = %w[profile.md writing.md profile.json].map do |name|
+  "#{site.config.fetch('url')}#{site.config.fetch('baseurl', '')}/#{name}"
+end
+abort 'Agent prompt URLs do not match the build origin/endpoints' unless prompt_urls == expected_prompt_urls
+expected_prompt_urls.each do |url|
+  path = URI(url).path.delete_prefix(site.config.fetch('baseurl', '')).delete_prefix('/')
+  abort "Missing prompt download: #{path}" unless File.file?(File.join(root, path))
+end
 ids = profile.fetch('experience').map { |entry| entry.fetch('id') }
 abort 'History identifiers are not unique' unless ids.uniq.length == ids.length
 profile.fetch('experience').zip(site.config.fetch('events')).each do |entry, source|

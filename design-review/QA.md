@@ -144,3 +144,10 @@ The selected design is now ported to the live Jekyll templates on `redesign/thin
 Release sequence: switch Pages source to **GitHub Actions** at the approved release, immediately before merging this branch into `master`; verify the deployment workflow succeeds and check the live homepage, experience, one old and one new article, agent downloads, custom-domain HTTPS, and 404. Retain the previous commit as the rollback point. Local/branch CI success does not demonstrate a completed live deployment.
 
 Limits: the visual/browser audit uses Chromium, not a full Safari/Firefox or assistive-technology matrix. External services and archived sources can change independently. The existing 2024 CTO period and April 2022–2023 lead-developer period are retained as supplied; no intervening dates were inferred.
+
+
+### Agent prompt URL regression
+
+The generic static server previously used for port 4175 served a production build. Its clickable download links resolved locally, but absolute URLs inside the prompt and downloads pointed at the public domain, where the new files do not exist until release. The active preview now uses `./scripts/serve --port 4175 --destination /tmp/mario-site-preview`; development-mode URLs use the actual preview port throughout. Production builds retain canonical HTTPS endpoints.
+
+`scripts/check-agent-links.py` follows all internal agent-screen links, three prompt URLs, four exports, and all eight article/Markdown pairs over HTTP (28 unique local URLs). It verifies plain-text downloads, JSON, export titles, and prompt copy behavior. `./scripts/check` now also verifies the URLs embedded in the prompt against the build configuration and confirms each referenced file exists. The HTTP check must use a development preview before deployment, or the real public domain after deployment.
