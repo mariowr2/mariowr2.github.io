@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "captured_on": "2026-10-29",
+  "context": "Production output before the Thin Ridgeline migration. Preserve these paths or serve an intentional compatibility redirect at the same path.",
+  "base_commit": "b8194d5",
+  "posts": [
+    {
+      "title": "fixmynotes.com, make studying easier!",
+      "source": "_posts/2018-12-16-fixmynotes.md",
+      "url": "/projects/2018/12/16/fixmynotes.html",
+      "output": "projects/2018/12/16/fixmynotes.html"
+    },
+    {
+      "title": "AUTCup 2018",
+      "source": "_posts/2018-04-01-AUT.md",
+      "url": "/robotics/2018/04/01/AUT.html",
+      "output": "robotics/2018/04/01/AUT.html"
+    },
+    {
+      "title": "RoboCup 2018",
+      "source": "_posts/2018-07-08-robocup.md",
+      "url": "/robotics/2018/07/08/robocup.html",
+      "output": "robotics/2018/07/08/robocup.html"
+    },
+    {
+      "title": "FIRA 2018 Robotics Competition",
+      "source": "_posts/2018-08-12-fira-2018.md",
+      "url": "/robotics/2018/08/12/fira-2018.html",
+      "output": "robotics/2018/08/12/fira-2018.html"
+    },
+    {
+      "title": "Qualification video for FIRA 2019 ready!",
+      "source": "_posts/2019-07-01-qualification-2019.md",
+      "url": "/robotics/2019/07/01/qualification-2019.html",
+      "output": "robotics/2019/07/01/qualification-2019.html"
+    },
+    {
+      "title": "The first Canadian robot rock band",
+      "source": "_posts/2019-11-10-IROS.md",
+      "url": "/robotics/2019/11/10/IROS.html",
+      "output": "robotics/2019/11/10/IROS.html"
+    },
+    {
+      "title": "Lessons from a successful(ish) mvp startup launch",
+      "source": "_posts/2022-10-20-lessons-mvp-launch.md",
+      "url": "/startups/2022/10/20/lessons-mvp-launch.html",
+      "output": "startups/2022/10/20/lessons-mvp-launch.html"
+    },
+    {
+      "title": "Road to Seed Round",
+      "source": "_posts/2026-03-1-road-to-seed-round.md",
+      "url": "/startups/2026/03/01/road-to-seed-round.html",
+      "output": "startups/2026/03/01/road-to-seed-round.html"
+    }
+  ],
+  "required_files": [
+    {
+      "url": "/404.html",
+      "output": "404.html",
+      "kind": "page"
+    },
+    {
+      "url": "/about.html",
+      "output": "about.html",
+      "kind": "page"
+    },
+    {
+      "url": "/blog/",
+      "output": "blog/index.html",
+      "kind": "page"
+    },
+    {
+      "url": "/categories/projects.html",
+      "output": "categories/projects.html",
+      "kind": "page"
+    },
+    {
+      "url": "/categories/robotics.html",
+      "output": "categories/robotics.html",
+      "kind": "page"
+    },
+    {
+      "url": "/categories/startups.html",
+      "output": "categories/startups.html",
+      "kind": "page"
+    },
+    {
+      "url": "/categories/tech.html",
+      "output": "categories/tech.html",
+      "kind": "page"
+    },
+    {
+      "url": "/contact.html",
+      "output": "contact.html",
+      "kind": "page"
+    },
+    {
+      "url": "/",
+      "output": "index.html",
+      "kind": "page"
+    },
+    {
+      "url": "/latest-post.html",
+      "output": "latest-post.html",
+      "kind": "page"
+    },
+    {
+      "url": "/projects/2018/12/16/fixmynotes.html",
+      "output": "projects/2018/12/16/fixmynotes.html",
+      "kind": "post"
+    },
+    {
+      "url": "/robotics/2018/04/01/AUT.html",
+      "output": "robotics/2018/04/01/AUT.html",
+      "kind": "post"
+    },
+    {
+      "url": "/robotics/2018/07/08/robocup.html",
+      "output": "robotics/2018/07/08/robocup.html",
+      "kind": "post"
+    },
+    {
+      "url": "/robotics/2018/08/12/fira-2018.html",
+      "output": "robotics/2018/08/12/fira-2018.html",
+      "kind": "post"
+    },
+    {
+      "url": "/robotics/2019/07/01/qualification-2019.html",
+      "output": "robotics/2019/07/01/qualification-2019.html",
+      "kind": "post"
+    },
+    {
+      "url": "/robotics/2019/11/10/IROS.html",
+      "output": "robotics/2019/11/10/IROS.html",
+      "kind": "post"
+    },
+    {
+      "url": "/startups/2022/10/20/lessons-mvp-launch.html",
+      "output": "startups/2022/10/20/lessons-mvp-launch.html",
+      "kind": "post"
+    },
+    {
+      "url": "/startups/2026/03/01/road-to-seed-round.html",
+      "output": "startups/2026/03/01/road-to-seed-round.html",
+      "kind": "post"
+    },
+    {
+      "url": "/tags/amirkabir.html",
+      "output": "tags/amirkabir.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/fira.html",
+      "output": "tags/fira.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/flask.html",
+      "output": "tags/flask.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/iran.html",
+      "output": "tags/iran.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/music.html",
+      "output": "tags/music.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/mvp.html",
+      "output": "tags/mvp.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/opencv.html",
+      "output": "tags/opencv.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/python.html",
+      "output": "tags/python.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/robotics.html",
+      "output": "tags/robotics.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/seed%20round.html",
+      "output": "tags/seed round.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/snobots.html",
+      "output": "tags/snobots.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/startup.html",
+      "output": "tags/startup.html",
+      "kind": "page"
+    },
+    {
+      "url": "/tags/tutorial.html",
+      "output": "tags/tutorial.html",
+      "kind": "page"
+    },
+    {
+      "url": "/timeline.html",
+      "output": "timeline.html",
+      "kind": "page"
+    },
+    {
+      "url": "/feed.xml",
+      "output": "feed.xml",
+      "kind": "discovery_or_hosting"
+    },
+    {
+      "url": "/sitemap.xml",
+      "output": "sitemap.xml",
+      "kind": "discovery_or_hosting"
+    },
+    {
+      "url": "/manifest.json",
+      "output": "manifest.json",
+      "kind": "discovery_or_hosting"
+    },
+    {
+      "url": "/CNAME",
+      "output": "CNAME",
+      "kind": "discovery_or_hosting"
+    },
+    {
+      "url": "/img/bg.jpg",
+      "output": "img/bg.jpg",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/favicon.ico",
+      "output": "img/favicon.ico",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/foto.jpg",
+      "output": "img/foto.jpg",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/foto5.png",
+      "output": "img/foto5.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/kakto.jpg",
+      "output": "img/kakto.jpg",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/labtocat.png",
+      "output": "img/labtocat.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/posts/awards.jpg",
+      "output": "img/posts/awards.jpg",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/posts/demo.gif",
+      "output": "img/posts/demo.gif",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/posts/example.png",
+      "output": "img/posts/example.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/151.png",
+      "output": "img/timeline/151.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/agco.png",
+      "output": "img/timeline/agco.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/aut.png",
+      "output": "img/timeline/aut.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/born.png",
+      "output": "img/timeline/born.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/chick.jpg",
+      "output": "img/timeline/chick.jpg",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/chick.png",
+      "output": "img/timeline/chick.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/evotrux.png",
+      "output": "img/timeline/evotrux.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/fira.png",
+      "output": "img/timeline/fira.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/htn.png",
+      "output": "img/timeline/htn.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/iros2019.png",
+      "output": "img/timeline/iros2019.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/manitoban.jpeg",
+      "output": "img/timeline/manitoban.jpeg",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/manitoban.png",
+      "output": "img/timeline/manitoban.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/robocup.png",
+      "output": "img/timeline/robocup.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/uofm.png",
+      "output": "img/timeline/uofm.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/uofm2021.png",
+      "output": "img/timeline/uofm2021.png",
+      "kind": "existing_image"
+    },
+    {
+      "url": "/img/timeline/wawa.png",
+      "output": "img/timeline/wawa.png",
+      "kind": "existing_image"
+    }
+  ]
+}

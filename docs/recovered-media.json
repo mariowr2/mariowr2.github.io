@@ -1,0 +1,56 @@
+[
+  {
+    "original": "http://news.umanitoba.ca/wp-content/uploads/2018/03/Feb-26-27-4-1200x800.jpg",
+    "archive": "https://web.archive.org/web/20180424211048id_/http://news.umanitoba.ca/wp-content/uploads/2018/03/Feb-26-27-4-1200x800.jpg",
+    "local": "/assets/images/autcup-2018/Feb-26-27-4-1200x800.jpg",
+    "bytes": 187206
+  },
+  {
+    "original": "http://news.umanitoba.ca/wp-content/uploads/2018/03/Feb-26-27-9.jpg",
+    "archive": "https://web.archive.org/web/20180424211055id_/http://news.umanitoba.ca/wp-content/uploads/2018/03/Feb-26-27-9.jpg",
+    "local": "/assets/images/autcup-2018/Feb-26-27-9.jpg",
+    "bytes": 165882
+  },
+  {
+    "original": "http://news.umanitoba.ca/wp-content/uploads/2018/03/Feb-26-27-11-1.jpg",
+    "archive": "https://web.archive.org/web/20180424211059id_/http://news.umanitoba.ca/wp-content/uploads/2018/03/Feb-26-27-11-1.jpg",
+    "local": "/assets/images/autcup-2018/Feb-26-27-11-1.jpg",
+    "bytes": 155616
+  },
+  {
+    "original": "http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-5-1.jpg",
+    "archive": "https://web.archive.org/web/20180827170224id_/http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-5-1.jpg",
+    "local": "/assets/images/robocup-2018/download-5-1.jpg",
+    "bytes": 127380
+  },
+  {
+    "original": "http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download.jpg",
+    "archive": "https://web.archive.org/web/20180827170225id_/http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download.jpg",
+    "local": "/assets/images/robocup-2018/download.jpg",
+    "bytes": 109942
+  },
+  {
+    "original": "http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-1.jpg",
+    "archive": "https://web.archive.org/web/20180827170226id_/http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-1.jpg",
+    "local": "/assets/images/robocup-2018/download-1.jpg",
+    "bytes": 76874
+  },
+  {
+    "original": "http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-2.jpg",
+    "archive": "https://web.archive.org/web/20180827152703id_/http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-2.jpg",
+    "local": "/assets/images/robocup-2018/download-2.jpg",
+    "bytes": 127581
+  },
+  {
+    "original": "http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-3.jpg",
+    "archive": "https://web.archive.org/web/20180827170227id_/http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-3.jpg",
+    "local": "/assets/images/robocup-2018/download-3.jpg",
+    "bytes": 131574
+  },
+  {
+    "original": "http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-4.jpg",
+    "archive": "https://web.archive.org/web/20180827170228id_/http://www.sci.umanitoba.ca/wp-content/uploads/2018/07/download-4.jpg",
+    "local": "/assets/images/robocup-2018/download-4.jpg",
+    "bytes": 154480
+  }
+]

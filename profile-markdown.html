@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: /profile.md
+---
+# {{ site.data.profile.name }}
+
+{{ site.data.profile.headline }}
+
+{{ site.data.profile.intro }}
+
+{{ site.data.profile.about }}
+
+Updated {{ site.data.profile.updated }}. [Website]({{ '/' | absolute_url }})
+
+## Professional history
+{% for event in site.events %}
+### {{ event.title }} · {{ event.date }}
+
+{{ event.description }}
+{% endfor %}
+## Links
+{% for link in site.social %}
+{% if link.title == 'github' %}- <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">GitHub ↗ (opens in a new tab)</a>
+{% elsif link.title == 'linkedin' %}- <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">LinkedIn ↗ (opens in a new tab)</a>
+{% else %}- [Email]({{ link.url }})
+{% endif %}{% endfor %}
+
+[Writing]({{ '/writing.md' | absolute_url }})

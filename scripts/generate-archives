@@ -19,3 +19,11 @@ site.read
     File.write(path, content) unless File.exist?(path) && File.read(path) == content
   end
 end
+
+# Commit Liquid alternates so native Pages can render these without custom plugins.
+site.posts.docs.each do |post|
+  path = File.join('text', "#{post.url.delete_prefix('/')}.html")
+  FileUtils.mkdir_p(File.dirname(path))
+  source = "---\nlayout: null\npermalink: /text#{post.url}.md\n---\n# #{post.data['title']}\n\nPublished #{post.date.strftime('%Y-%m-%d')}\nOriginal: {{ '#{post.url}' | absolute_url }}\n\n#{post.content}\n"
+  File.write(path, source) unless File.exist?(path) && File.read(path) == source
+end

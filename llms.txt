@@ -1,0 +1,11 @@
+---
+layout: null
+---
+# {{ site.data.profile.name }}
+
+> {{ site.data.profile.headline }}. Public profile, professional history, and original writing.
+
+- [Profile and history]({{ '/profile.md' | absolute_url }})
+- [Structured profile]({{ '/profile.json' | absolute_url }})
+- [Writing index and Markdown articles]({{ '/writing.md' | absolute_url }})
+- [Human-readable experience]({{ '/experience/' | absolute_url }})

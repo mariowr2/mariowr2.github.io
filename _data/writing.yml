@@ -1,0 +1,9 @@
+road-to-seed-round:
+  context: Evotrux / seed round
+  summary: 'From the Evotrux MVP to our seed round: finding a customer, running short on time, and deciding what to build.'
+lessons-mvp-launch:
+  context: Evotrux / MVP launch
+  summary: 'What I wish I’d known before launching Evotrux 2.0. Code standards, saying no, observability, and looking after the team.'
+IROS:
+  context: University of Manitoba / robotics
+  summary: 'We had to make two humanoid robots play a 15-minute set. Here’s how we did it.'

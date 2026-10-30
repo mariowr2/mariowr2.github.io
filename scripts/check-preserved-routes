@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+# Protect the current public URL contract while migrating presentation.
+require 'json'
+require 'pathname'
+
+Dir.chdir(File.expand_path('..', __dir__))
+root = Pathname.new(ARGV.fetch(0, '_site')).expand_path
+abort "Build directory missing: #{root}" unless root.directory?
+baseline = JSON.parse(File.read('docs/production-routes.json'))
+missing = baseline.fetch('required_files').reject do |entry|
+  target = root.join(entry.fetch('output')).cleanpath
+  target.to_s.start_with?(root.to_s + '/') && target.file?
+end
+unless missing.empty?
+  abort "Missing existing public URLs:\n" + missing.map { |entry| "  #{entry.fetch('url')} -> #{entry.fetch('output')}" }.join("\n") +
+        "\nPreserve the output or add an intentional compatibility redirect; do not erase the baseline to silence this check."
+end
+puts "Preserved #{baseline.fetch('required_files').length} public outputs, including #{baseline.fetch('posts').length} existing post routes."

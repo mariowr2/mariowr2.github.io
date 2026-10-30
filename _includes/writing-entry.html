@@ -1,0 +1,6 @@
+<article class="post">
+<time class="meta" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %d, %Y' }}</time>
+<h3>
+<a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+</h3>
+</article>

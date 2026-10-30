@@ -1,0 +1,65 @@
+#!/usr/bin/env ruby
+# Validate the downloadable files in the same artifact that Pages will deploy.
+require 'json'
+require 'uri'
+require 'nokogiri'
+require 'jekyll'
+
+root = File.expand_path('../_site', __dir__)
+profile = JSON.parse(File.read(File.join(root, 'profile.json')))
+abort 'Unsupported profile schema' unless profile.fetch('schema_version') == 1
+profile_text = File.read(File.join(root, 'profile.md'))
+writing_text = File.read(File.join(root, 'writing.md'))
+abort 'Profile Markdown and JSON disagree' unless profile_text.include?(profile.fetch('name'))
+site = Jekyll::Site.new(Jekyll.configuration('quiet' => true))
+site.read
+abort 'Profile JSON contains HTML' unless profile.fetch('personal') == Nokogiri::HTML.fragment(site.data.fetch('profile').fetch('about')).text
+abort 'History count differs from source' unless profile.fetch('experience').length == site.config.fetch('events').length
+abort 'Writing count differs from source' unless profile.fetch('writing').length == site.posts.docs.length
+agent_page = Nokogiri::HTML(File.read(File.join(root, 'for-agents', 'index.html')))
+prompt = agent_page.at_css('#agent-prompt')&.text.to_s
+prompt_urls = prompt.scan(%r{https?://[^\s<>]+})
+expected_prompt_urls = %w[profile.md writing.md profile.json].map do |name|
+  "#{site.config.fetch('url')}#{site.config.fetch('baseurl', '')}/#{name}"
+end
+abort 'Agent prompt URLs do not match the build origin/endpoints' unless prompt_urls == expected_prompt_urls
+expected_prompt_urls.each do |url|
+  path = URI(url).path.delete_prefix(site.config.fetch('baseurl', '')).delete_prefix('/')
+  abort "Missing prompt download: #{path}" unless File.file?(File.join(root, path))
+end
+ids = profile.fetch('experience').map { |entry| entry.fetch('id') }
+abort 'History identifiers are not unique' unless ids.uniq.length == ids.length
+profile.fetch('experience').zip(site.config.fetch('events')).each do |entry, source|
+  %w[title description].each do |field|
+    abort "History #{field} differs from source" unless entry.fetch(field) == source.fetch(field)
+  end
+  abort 'History identifier differs from source' unless entry.fetch('id') == "history-#{source.fetch('id')}"
+  abort 'History date differs from source' unless entry.fetch('period') == source.fetch('date')
+  abort "Missing history entry: #{entry.fetch('title')}" unless profile_text.include?(entry.fetch('title'))
+end
+profile.fetch('writing').each do |entry|
+  path = URI.parse(entry.fetch('markdown_url')).path.delete_prefix('/')
+  text = File.read(File.join(root, path))
+  abort "Missing Markdown title: #{path}" unless text.start_with?("# #{entry.fetch('title')}\n")
+  abort "Unrendered Liquid: #{path}" if text.include?('{{') || text.include?('{%')
+  abort "Missing writing index link: #{path}" unless writing_text.include?(entry.fetch('markdown_url'))
+end
+%w[feed.xml sitemap.xml].each do |name|
+  Nokogiri::XML(File.read(File.join(root, name))) { |config| config.strict }
+end
+JSON.parse(File.read(File.join(root, 'manifest.json')))
+%w[_site docs design-review scripts AGENTS.md Gemfile Gemfile.lock README.md .github].each do |path|
+  abort "Development artifact published: #{path}" if File.exist?(File.join(root, path))
+end
+Dir.glob(File.join(root, '**', '*.html')).each do |path|
+  document = Nokogiri::HTML(File.read(path))
+  abort "Missing or duplicate page heading: #{path}" unless document.css('main h1').length == 1
+  document.css('script[type="application/ld+json"]').each { |script| JSON.parse(script.text) }
+  document.css('a[href]').each do |link|
+    next unless link['href'].match?(%r{\Ahttps?://(?:www\.)?(?:github|linkedin)\.com/})
+    abort "Social link does not open a new tab: #{path}" unless link['target'] == '_blank' && link['rel'].to_s.split.include?('noopener')
+    abort "Social link lacks visible indicator: #{path}" unless link.text.include?('↗')
+    abort "Social link lacks accessible notice: #{path}" unless [link.text, link['aria-label']].compact.join(' ').include?('opens in a new tab')
+  end
+end
+puts "Validated agent profile, #{profile.fetch('writing').length} Markdown articles, indexes, XML, and manifest."

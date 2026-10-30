@@ -16,10 +16,10 @@ jobs:
         with:
           bundler-cache: true
       - run: ./scripts/check
-      - name: Ensure archive sources are committed
+      - name: Ensure archive and article sources are committed
         run: |
-          if [ -n "$(git status --porcelain -- categories tags)" ]; then
-            echo 'Run ./scripts/build and commit the generated categories/ and tags/ pages.'
-            git status --short -- categories tags
+          if [ -n "$(git status --porcelain -- categories tags text)" ]; then
+            echo 'Run ./scripts/build and commit the generated categories/, tags/, and text/ pages.'
+            git status --short -- categories tags text
             exit 1
           fi

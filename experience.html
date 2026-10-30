@@ -1,0 +1,19 @@
+---
+layout: default
+title: Experience
+permalink: /experience/
+sitemap:
+  priority: 0.8
+---
+<section class="intro history-intro">
+<h1>Experience</h1>
+</section>
+<div class="history-list">{% for event in site.events %}<article class="history-event" id="{{ event.id }}">
+<div>
+<div class="meta">{{ event.date }}</div>
+<img src="{{ event.image | relative_url }}" alt="" loading="lazy" width="160" height="160">
+</div>
+<div>
+<h2>{{ event.title }}</h2>
+<p>{{ event.description }}</p>{% if event.post %}{% for post in site.posts %}{% if post.slug == event.post %}<a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endif %}{% endfor %}{% endif %}</div>
+</article>{% endfor %}</div>
