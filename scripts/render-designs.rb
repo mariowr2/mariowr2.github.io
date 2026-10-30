@@ -18,12 +18,12 @@ site.posts.docs.each do |post|
 end
 posts = site.posts.docs.sort_by(&:date).reverse.map do |post|
   page = Nokogiri::HTML(File.read(File.join('_site', post.url.delete_prefix('/'))))
-  body = page.at_css('#post section.text-left').inner_html
+  body = page.at_css('#post section.text-left, #post.prose').inner_html
   { title: post.data['title'], date: post.date.strftime('%b %d, %Y'), iso: post.date.strftime('%Y-%m-%d'), year: post.date.year,
     slug: post.basename_without_ext.sub(/^\d{4}-\d{1,2}-\d{1,2}-/, ''), url: post.url,
     topics: post.data['category'] == 'startups' ? 'product teams' : post.data['category'] == 'Robotics' ? 'systems experiments' : 'experiments systems',
     body: body.gsub(/((?:href|src)=["'])\/(?!\/)/, '\1https://mariomendez.me/'),
-    words: page.at_css('#post section.text-left').text.split.length }
+    words: page.at_css('#post section.text-left, #post.prose').text.split.length }
 end
 summaries = {
   'road-to-seed-round' => 'From the Evotrux MVP to our seed round: finding a customer, running short on time, and deciding what to build.',

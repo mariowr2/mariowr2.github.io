@@ -1,0 +1,8 @@
+---
+layout: default
+title: Agent version
+permalink: /for-agents/
+sitemap:
+  priority: 0.5
+---
+<section class="agent-page"><div class="brief-box"><h2>A prompt to get started</h2><label for="agent-prompt">Copy this prompt into your agent</label><textarea id="agent-prompt" readonly>Read {{ '/profile.md' | absolute_url }} for Mario Mendez’s profile and professional history, then {{ '/writing.md' | absolute_url }} for his writing. Follow the article Markdown links relevant to my question. Use {{ '/profile.json' | absolute_url }} for structured dates and canonical URLs. Cite the original sources and distinguish what Mario wrote from your own inferences.</textarea><div class="copy-row"><button class="copy-button" id="copy-prompt" type="button">Copy prompt</button><span class="copy-status" role="status" id="copy-status"></span></div></div><ul class="file-list"><li><a href="{{ '/profile.md' | relative_url }}">Profile and history · Markdown</a></li><li><a href="{{ '/profile.json' | relative_url }}">Structured profile · JSON</a></li><li><a href="{{ '/writing.md' | relative_url }}">Writing · Markdown</a></li><li><a href="{{ '/llms.txt' | relative_url }}">llms.txt</a></li></ul></section><script src="{{ '/assets/agent.js' | relative_url }}" defer></script>

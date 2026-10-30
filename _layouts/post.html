@@ -1,66 +1,25 @@
-
-<!-- Post Layout Start -->
-
-<!DOCTYPE html>
-<html lang="{{ site.lang }}">
-
-  {% include head.html %}
-
-  <body>
-
-    {% include navigation.html %}
-
-    <section id="post" class="container content-section text-center">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-
-          {% include swipe-instructions.html %}
-
-          <h1><strong>{{ page.title }}</strong></h1>
-          <h4>
-            <strong>{{ page.date | date_to_string }}</strong>
-            <small>
-              . category:
-              <a class="category" href="{{site.baseurl}}/categories/{{page.category | downcase | uri_escape}}.html">
-                {{ page.category }}
-              </a>.
-              <a href="{{site.baseurl}}{{page.url }}#disqus_thread">Comments</a>
-              <br />
-              {% for tag in page.tags %}
-                <a class="tag" href="{{site.baseurl}}/tags/{{tag | downcase | uri_escape}}.html">#{{ tag }}</a>
-              {% endfor %}
-            </small>
-          </h4>
-
-          <section class="text-left">
-            {{ page.content | markdownify }}
-          </section>
-
-          {% include share.html %}
-
-          {% if jekyll.environment == "production" %}
-            {% include comments.html %}
-          {% endif %}
-
-
-          <hr />
-
-          {% if site.author_blurb %}
-          <div class="author row">
-            <p class="col-xs-8 col-sm-9 col-md-10">
-              {{ site.author_blurb }}
-            </p>
-          </div>
-          {% endif%}
-        </div>
-      </div>
-    </section>
-
-    {% include footer.html %}
-
-    {% include js.html %}
-
-  </body>
-</html>
-
-<!-- Post Layout End -->
+---
+layout: default
+---
+<div class="article-layout">
+<aside class="article-aside">
+<a href="{{ '/blog/' | relative_url }}">All writing</a>
+<div class="label">Published</div>
+<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %d, %Y' }}</time>
+<div class="label">Reading time</div>
+<span>{{ content | strip_html | number_of_words | divided_by: 220 | plus: 1 }} minutes</span>
+<div class="toc">
+<div class="label">Also available</div>{% assign text_url = page.url | prepend: '/text' | append: '.md' %}<a href="{{ text_url | relative_url }}">Markdown</a>
+<a href="{{ '/for-agents/' | relative_url }}">Agent briefing</a>
+<a href="{{ '/experience/' | relative_url }}">Experience</a>
+</div>
+</aside>
+<article>
+<header class="article-head">
+<p class="eyebrow">{{ page.category }}</p>
+<h1>{{ page.title }}</h1>{% if site.data.writing[page.slug] %}<p class="dek">{{ site.data.writing[page.slug].summary }}</p>{% endif %}</header>
+<div class="prose" id="post">{{ content }}</div>
+<div class="note">{% for tag in page.tags %}<a href="{{ '/tags/' | append: tag | downcase | append: '.html' | relative_url | uri_escape }}">#{{ tag }}</a> {% endfor %}</div>
+<a href="{{ '/blog/' | relative_url }}">More writing</a>
+</article>
+</div>

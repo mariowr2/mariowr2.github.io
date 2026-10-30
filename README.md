@@ -36,14 +36,18 @@ Local previews layer `_config.dev.yml` over `_config.yml`, disable HTTPS redirec
 
 ## Structure
 
-- `_config.yml`: public URL, metadata, homepage section order (`pages_list`), social links, timeline events, and plugin settings.
-- `index.html` and `_layouts/index.html`: homepage entry point and composition. Root section files such as `about.html` supply content/front matter to matching `_includes/` sections.
-- `_layouts/`: blog, post, archive, and error templates.
-- `_includes/`: shared navigation, head, footer, section markup, and JavaScript.
-- `_posts/`: dated Markdown posts, some with substantial embedded HTML and third-party media.
-- `categories/` and `tags/`: committed archive source pages. Build/serve scripts generate missing/current entries from post metadata. Existing unused pages are retained to preserve URLs; remove intentionally if desired.
-- `css/` and `_sass/`: Sass styles, variables, and mixins; `img/` and `js/`: static assets.
-- `_site/`, `.jekyll-cache/`, and `.bundle/`: generated/local files, ignored by Git.
+- `_config.yml`: metadata, social links, homepage writing order and roles, professional timeline, and build settings.
+- `_data/profile.yml`: shared public biography, original portrait, and independent optional feature media (`ridgeline`, `image`, or `none`). Image mode uses `src`, `alt`, `width`, and `height`; no new photo is required.
+- `_data/writing.yml`: selected writing summaries shared by homepage and articles.
+- `_layouts/default.html`, `_includes/site-nav.html`: shared semantic document, navigation, discovery, structured data, and footer.
+- `assets/site.css`, `assets/fonts/`, `assets/ridgeline.js`: consolidated design, licensed local IBM Plex Mono, and optional homepage movement. The site shell has no external frontend dependencies.
+- `_posts/`: original dated Markdown and embedded HTML/media, with unchanged public URLs.
+- `categories/`, `tags/`, `text/`: committed generated taxonomy pages and raw Markdown article alternates. Build/serve scripts regenerate these from posts; CI checks they are current.
+- `/experience/`: full timeline from `_config.yml`, retaining overlapping periods.
+- `/for-agents/`, `/profile.md`, `/profile.json`, `/writing.md`, `/llms.txt`: public representations of the same profile, history, and posts. Markdown source templates use `.html` filenames with explicit `.md` permalinks to avoid Jekyll converting them to HTML.
+- `design-review/`: archived references, handoff, screenshots, and route preservation contract; excluded from publication.
+- `css/`, `_sass/`, `js/`, older includes: retained theme sources; old `css/` and `js/` assets are excluded from publication.
+- `_site/`, `.jekyll-cache/`, `.bundle/`: generated/local files, ignored by Git.
 
 Post filenames determine dates/slugs; categories also affect default Jekyll post URLs. Preserve existing URLs or add redirects when migrating content. Archive links retain lowercase names and encode spaces.
 
@@ -51,11 +55,17 @@ Post filenames determine dates/slugs; categories also affect default Jekyll post
 
 Run `./scripts/check` before committing, and commit any generated category/tag pages. GitHub Actions runs the same check and rejects uncommitted archive generation changes. The checker validates local `href`/`src` file targets, including absolute links to the configured public domain. It skips external URLs and fragment IDs; it does not inspect CSS URLs, `srcset`, JavaScript behavior, or remote embeds. Preview affected pages on desktop and mobile for visual changes.
 
-The baseline build succeeds but reports Sass deprecations (`@import` and `darken`). Bootstrap 3, jQuery 1, Font Awesome 4, and several scripts/fonts still load from external CDNs. Modernizing these is deferred to the redesign. Some posts contain copied third-party HTML, HTTP images, or legacy sharing markup. The production analytics configuration is also inherited and should be revisited during the redesign.
+The redesigned shell uses local fonts, CSS, and optional vanilla JavaScript. Inherited analytics, comments, sharing widgets, Bootstrap, jQuery, and external font services are absent from the shared layouts. Historical posts retain their original embedded HTML, including third-party sharing scripts and HTTP media; remote embed availability is outside local validation.
+
+Optional browser verification: serve `_site/` at `http://127.0.0.1:4175`, then run `scripts/check-redesign.py` with Python Playwright installed outside the site runtime (see `design-review/QA.md`). It checks all posts and principal pages at 320, 390, 768, and 1440px, visible ridgeline movement, reversal, masthead separation, reduced motion, no-JavaScript reading, structured data, and prompt copy. Desktop/phone screenshots go to `/tmp/mario-production-{width}.png`. `scripts/check-redesign-media.py` builds image/none configurations in temporary directories and verifies they retain the portrait and writing; it also checks exported records and JSON/XML. Both require permission to launch Chromium outside a restricted sandbox.
 
 ## Hosting
 
-The repository name and `CNAME` indicate GitHub Pages with custom domain `mariomendez.me`. Pages settings were verified read-only on October 29, 2026: legacy build, source `master` at `/`, custom domain `mariomendez.me`, and HTTPS enforced. The checked-in workflow validates changes; it **does not deploy**. Merging into `master` can publish via the separate native Pages build. Confirm these settings again before changing the publishing pipeline. Native GitHub Pages may use different dependency versions from the locally locked Jekyll 4 setup; use a custom build/deploy workflow if exact parity is required.
+GitHub Pages uses the custom domain `mariomendez.me`. The new `.github/workflows/deploy.yml` builds and deploys only from `master` (including manual runs). Each deployment runs `./scripts/check`, which regenerates category/tag pages and article Markdown from current posts, builds with `.ruby-version` and `Gemfile.lock`, and validates links and protected routes. Only that validated `_site/` artifact is uploaded and deployed. Profile Markdown/JSON, writing indexes, and `llms.txt` render from shared sources during the same build. Deployment does not rely on generated files already being current in Git.
+
+**Release activation:** Pages was rechecked on October 29, 2026 and still uses the legacy build from `master` at `/`, with HTTPS enforced. After this workflow lands on `master`, change repository Settings → Pages → Build and deployment → Source to **GitHub Actions**, then run “Deploy GitHub Pages” on `master` if necessary. This replaces the legacy Jekyll environment with the locked build. Until that setting changes, the new publishing path is not active. No hosting settings were changed during implementation. Merging into `master` while legacy publishing remains enabled can still publish through the old build path.
+
+Pull requests and branch pushes continue to run `.github/workflows/check.yml` for validation; they cannot deploy through the new workflow.
 
 `scripts/integrate-personal` is an inherited upstream merge helper, not part of the normal development workflow. Do not run it during routine maintenance.
 
@@ -65,7 +75,7 @@ The selected direction is **Thin Ridgeline**, built on A Measured Ascent: dark b
 
 Start implementation with [the handoff](design-review/HANDOFF.md) and [the recorded selection](design-review/selected.json). The approved [homepage](design-review/mountain-ridge/index.html), [reading view](design-review/mountain-ridge/road-to-seed-round.html), [history view](design-review/mountain-ridge/history.html), and desktop/phone captures are committed references. Older galleries are design history, not competing specifications.
 
-This checkpoint preserves the prototype; the production Jekyll templates still use the old theme. The handoff maps the selected source to real layouts/data/assets, describes human/agent publishing from shared content, and gives an ordered migration and release checklist.
+The production templates now implement the selected reference. The original handoff remains the design record and release checklist. The homepage, article, archive, taxonomy, experience, compatibility pages, and agent endpoints are implemented; an explicit locked-dependency deployment workflow is included; hosting activation and actual release remain outstanding steps. No hosting settings were changed during the port.
 
 Run `./scripts/check` before committing. It now also checks [the existing public URL contract](design-review/production-routes.json): 61 required outputs, including all eight current post routes, discovery/hosting files, and original images. Missing paths fail local checks and the existing CI workflow. Preserve a route or add its intentional compatibility redirect when changing the structure.
 

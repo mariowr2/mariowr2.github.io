@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /profile.md
+---
+# {{ site.data.profile.name }}
+
+{{ site.data.profile.headline }}
+
+{{ site.data.profile.intro }}
+
+{{ site.data.profile.about }}
+
+Updated {{ site.data.profile.updated }}. [Website]({{ '/' | absolute_url }})
+
+## Professional history
+{% for event in site.events %}
+### {{ event.title }} · {{ event.date }}
+
+{{ event.description }}
+{% endfor %}
+## Links
+{% for link in site.social %}
+- [{{ link.title }}]({{ link.url }}){% endfor %}
+
+[Writing]({{ '/writing.md' | absolute_url }})

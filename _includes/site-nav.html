@@ -1,0 +1,8 @@
+<header class="site-head">
+<a class="brand" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
+<nav class="nav" aria-label="Main">
+<a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Writing</a>
+<a href="{{ '/experience/' | relative_url }}"{% if page.url == '/experience/' %} aria-current="page"{% endif %}>Experience</a>
+<a class="agent-nav" href="{{ '/for-agents/' | relative_url }}">Agent version</a>
+<a href="mailto:mmendezdiaz@outlook.com">Email</a>
+</nav>{% if page.home and site.data.profile.feature_media.kind == 'ridgeline' %}<div class="paired-header" aria-hidden="true">{% include ridgeline-header.svg %}</div>{% endif %}</header>

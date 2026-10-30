@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+# Validate the downloadable files in the same artifact that Pages will deploy.
+require 'json'
+require 'uri'
+require 'nokogiri'
+
+root = File.expand_path('../_site', __dir__)
+profile = JSON.parse(File.read(File.join(root, 'profile.json')))
+abort 'Unsupported profile schema' unless profile.fetch('schema_version') == 1
+profile_text = File.read(File.join(root, 'profile.md'))
+writing_text = File.read(File.join(root, 'writing.md'))
+abort 'Profile Markdown and JSON disagree' unless profile_text.include?(profile.fetch('name'))
+profile.fetch('experience').each do |entry|
+  abort "Missing history entry: #{entry.fetch('title')}" unless profile_text.include?(entry.fetch('title'))
+end
+profile.fetch('writing').each do |entry|
+  path = URI.parse(entry.fetch('markdown_url')).path.delete_prefix('/')
+  text = File.read(File.join(root, path))
+  abort "Missing Markdown title: #{path}" unless text.start_with?("# #{entry.fetch('title')}\n")
+  abort "Unrendered Liquid: #{path}" if text.include?('{{') || text.include?('{%')
+  abort "Missing writing index link: #{path}" unless writing_text.include?(entry.fetch('markdown_url'))
+end
+%w[feed.xml sitemap.xml].each do |name|
+  Nokogiri::XML(File.read(File.join(root, name))) { |config| config.strict }
+end
+JSON.parse(File.read(File.join(root, 'manifest.json')))
+puts "Validated agent profile, #{profile.fetch('writing').length} Markdown articles, indexes, XML, and manifest."

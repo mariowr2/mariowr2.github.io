@@ -2,6 +2,8 @@
 
 Updated October 29, 2026 · branch `redesign/thin-ridgeline`
 
+**Implementation update:** The production port described below is now implemented on this branch. See the root README for the current structure and commands. The original handoff below records the approved design and acceptance criteria. Hosting/build parity and release remain outstanding.
+
 ## Start here
 
 The design exploration is finished for now. **Thin Ridgeline**, built on **A Measured Ascent**, is the approved visual reference. It is a reference name, not the public site's brand. Do not restart with another direction or merge features from older galleries by default.

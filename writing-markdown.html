@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /writing.md
+---
+# Writing by {{ site.data.profile.name }}
+{% for post in site.posts %}{% assign text_url = post.url | prepend: '/text' | append: '.md' %}
+## {{ post.title }}
+
+Published {{ post.date | date: '%Y-%m-%d' }}
+
+- [Article]({{ post.url | absolute_url }})
+- [Markdown]({{ text_url | absolute_url }})
+{% endfor %}

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "selected_on": "2026-10-29",
   "branch": "redesign/thin-ridgeline",
-  "status": "approved visual direction; production implementation pending",
+  "status": "approved visual direction; production port implemented and locally verified; release pending",
   "selected_prototype": "design-review/mountain-ridge/index.html",
   "selected_article": "design-review/mountain-ridge/road-to-seed-round.html",
   "selected_history": "design-review/mountain-ridge/history.html",

@@ -1,0 +1,3 @@
+{% assign media = site.data.profile.feature_media %}{% if media.kind == 'ridgeline' %}<div class="paired-scene" data-mountain="ridge" aria-hidden="true">{% include ridgeline-main.svg %}</div>{% elsif media.kind == 'image' and media.src %}<figure class="feature-image">
+<img src="{{ media.src | relative_url }}" alt="{{ media.alt | escape }}" width="{{ media.width }}" height="{{ media.height }}">
+</figure>{% endif %}

@@ -1,0 +1,15 @@
+name: Mario Mendez
+headline: CTO and founder
+intro_heading: I like trying things I’m not quite ready for.
+intro: I’m Mario, a CTO and founder. I build software, run marathons, and head out on multi-day bike trips. I like the part where something that felt out of reach starts to feel possible.
+about: I’ve run several marathons and taken multi-day bike trips. I like mountains, cats, and finding out I can go a little further than I thought.
+updated: '2026-10-29'
+portrait:
+  src: /img/kakto.jpg
+  alt: Mario Mendez
+feature_media:
+  kind: ridgeline
+  src:
+  alt:
+  width: 1200
+  height: 800
