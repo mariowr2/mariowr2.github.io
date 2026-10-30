@@ -36,9 +36,8 @@ summaries = {
   'AUT' => 'AUTCup in Tehran with the University of Manitoba Snobots.'
 }
 posts.each { |p| p[:summary] = summaries.fetch(p[:slug], 'From the archive.') }
-events = site.config['events'].map.with_index do |event, index|
-  titles = ['Building Evotrux', 'Full-stack development at Evotrux', 'Software Developer · AGCO', 'B.Sc. Computer Science · University of Manitoba', 'Research & Technology Editor · The Manitoban', 'Software Developer Intern · 151 Research', 'IROS · Robot music', 'Innovation Lab · Wawanesa', 'Hack the North', 'FIRA · Taiwan', 'RoboCup', 'AUTCup · Tehran', 'A new chapter in Canada']
-  {date: event['date'], description: event['description'], title: titles[index], image: '../../' + event['image'].delete_prefix('/')}
+events = site.config['events'].map do |event|
+  {date: event['date'], description: event['description'], title: event.fetch('title'), image: '../../' + event['image'].delete_prefix('/')}
 end
 variants = [
   {id:'journal', number:'01', name:'The blog', subtitle:'Mario Mendez: software, products, teams.', tagline:'Hi, I’m Mario.', description:'I’m a CTO and founder. I like writing code, figuring out how systems work, and building things people find useful. This is where I write down what I learn.', rationale:'Dark background, off-white text, green links. Mono throughout; recent writing first.'},

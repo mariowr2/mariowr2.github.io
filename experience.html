@@ -5,4 +5,15 @@ permalink: /experience/
 sitemap:
   priority: 0.8
 ---
-<section class="intro history-intro"><h1>Experience</h1><p>I’ve worked on freight software, full-stack systems, cloud infrastructure, IoT, and humanoid robots. Here’s the history, with links to what I wrote along the way.</p></section><div class="history-list"><div class="principle"><p>“Also learning how to build the team I’d want to be part of.”</p><span class="meta">From my Evotrux timeline entry</span></div>{% for event in site.events %}<article class="history-event"><div><div class="meta">{{ event.date }}</div><img src="{{ event.image | relative_url }}" alt="" loading="lazy" width="32" height="32"></div><div><h2>{{ event.title }}</h2><p>{{ event.description }}</p>{% if event.post %}{% for post in site.posts %}{% if post.slug == event.post %}<a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endif %}{% endfor %}{% endif %}</div></article>{% endfor %}</div>
+<section class="intro history-intro">
+<h1>Experience</h1>
+</section>
+<div class="history-list">{% for event in site.events %}<article class="history-event" id="{{ event.id }}">
+<div>
+<div class="meta">{{ event.date }}</div>
+<img src="{{ event.image | relative_url }}" alt="" loading="lazy" width="160" height="160">
+</div>
+<div>
+<h2>{{ event.title }}</h2>
+<p>{{ event.description }}</p>{% if event.post %}{% for post in site.posts %}{% if post.slug == event.post %}<a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% endif %}{% endfor %}{% endif %}</div>
+</article>{% endfor %}</div>

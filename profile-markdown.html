@@ -20,6 +20,9 @@ Updated {{ site.data.profile.updated }}. [Website]({{ '/' | absolute_url }})
 {% endfor %}
 ## Links
 {% for link in site.social %}
-- [{{ link.title }}]({{ link.url }}){% endfor %}
+{% if link.title == 'github' %}- <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">GitHub ↗ (opens in a new tab)</a>
+{% elsif link.title == 'linkedin' %}- <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">LinkedIn ↗ (opens in a new tab)</a>
+{% else %}- [Email]({{ link.url }})
+{% endif %}{% endfor %}
 
 [Writing]({{ '/writing.md' | absolute_url }})

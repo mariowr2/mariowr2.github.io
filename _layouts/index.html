@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-{% assign profile = site.data.profile %}<section class="intro{% if profile.feature_media.kind == 'none' %} no-feature{% endif %}">
+{% assign profile = site.data.profile %}<section class="intro{% if profile.feature_media.kind == 'image' %} has-image{% endif %}{% if profile.feature_media.kind == 'none' %} no-feature{% endif %}">
 <div>
 <div class="intro-identity">
-<img class="portrait-photo" src="{{ profile.portrait.src | relative_url }}" alt="{{ profile.portrait.alt }}" width="72" height="86">
+<img class="portrait-photo" src="{{ profile.portrait.src | relative_url }}" alt="{{ profile.portrait.alt }}" width="117" height="140">
 <h1>{{ profile.intro_heading }}</h1>
 </div>
 <p>{{ profile.intro }}</p>
@@ -12,7 +12,7 @@ layout: default
 <div class="columns">
 <section aria-labelledby="writing-title">
 <div class="heading-row">
-<h2 id="writing-title">Work and related posts</h2>
+<h2 id="writing-title">Writing</h2>
 <a href="{{ '/experience/' | relative_url }}">Full history</a>
 </div>{% for slug in site.home_featured %}{% for post in site.posts %}{% if post.slug == slug %}<article class="chapter">
 <span class="year">{{ post.date | date: '%Y' }}</span>
@@ -28,20 +28,19 @@ layout: default
 <a href="{{ '/blog/' | relative_url }}">Complete archive</a>
 </div>{% for post in site.posts %}{% unless site.home_featured contains post.slug %}{% include writing-entry.html %}{% endunless %}{% endfor %}</section>
 <aside class="side" aria-label="About Mario">
+{% if profile.feature_media.kind == 'image' %}{% include feature-media.html placement='feature-mobile' %}{% endif %}
 <section>
-<h2>Away from the keyboard</h2>
+<h2>When I'm not building...</h2>
 <p>{{ profile.about }}</p>
 <a href="{{ '/experience/' | relative_url }}">Experience</a>
 </section>
+
 <section>
-<h2>Where I’ve worked</h2>
-<ul class="roles">{% for role in site.home_roles %}<li>
-<strong>{{ role.name }}</strong>
-<span>{{ role.period }}</span>
-</li>{% endfor %}</ul>
-</section>
-<section>
-<h2>Get in touch</h2>{% for link in site.social %}<a href="{{ link.url }}">{% if link.title == 'envelope' %}Email{% elsif link.title == 'github' %}GitHub{% else %}LinkedIn{% endif %}</a>
-<br>{% endfor %}</section>
+<h2>Get in touch</h2>
+{% for link in site.social %}
+{% if link.title == 'github' %}{% include external-link.html url=link.url label='GitHub' %}
+{% elsif link.title == 'linkedin' %}{% include external-link.html url=link.url label='LinkedIn' %}
+{% else %}<a href="{{ link.url }}">Email</a>{% endif %}<br>
+{% endfor %}</section>
 </aside>
 </div>

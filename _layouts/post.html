@@ -7,7 +7,8 @@ layout: default
 <div class="label">Published</div>
 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %d, %Y' }}</time>
 <div class="label">Reading time</div>
-<span>{{ content | strip_html | number_of_words | divided_by: 220 | plus: 1 }} minutes</span>
+{% assign reading_minutes = content | strip_html | number_of_words | divided_by: 220 | plus: 1 %}
+<span>{{ reading_minutes }} {% if reading_minutes == 1 %}minute{% else %}minutes{% endif %}</span>
 <div class="toc">
 <div class="label">Also available</div>{% assign text_url = page.url | prepend: '/text' | append: '.md' %}<a href="{{ text_url | relative_url }}">Markdown</a>
 <a href="{{ '/for-agents/' | relative_url }}">Agent briefing</a>

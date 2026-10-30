@@ -24,7 +24,8 @@
 <div>
 <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
 <a class="agent-footer" href="{{ '/for-agents/' | relative_url }}">Agent version</a>
-<a href="https://github.com/mario-evo">GitHub</a>
+{% assign github = site.social | where: 'title', 'github' | first %}
+{% include external-link.html url=github.url label='GitHub' %}
 </div>
 </footer>
 </div>

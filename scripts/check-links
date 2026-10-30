@@ -12,9 +12,10 @@ errors = []
 files = root.glob('**/*.html')
 abort 'No generated HTML found' if files.empty?
 files.each do |file|
-  Nokogiri::HTML(file.read).css('[href], [src]').each do |node|
-    %w[href src].each do |attribute|
-      value = node[attribute]
+  Nokogiri::HTML(file.read).css('[href], [src], [srcset]').each do |node|
+    values = %w[href src].map { |attribute| [attribute, node[attribute]] }
+    values += node['srcset'].to_s.split(',').map { |candidate| ['srcset', candidate.strip.split.first] }
+    values.each do |attribute, value|
       next if value.nil? || value.empty? || value.start_with?('#', '//')
       begin
         uri = URI.parse(value.gsub(' ', '%20'))
@@ -33,4 +34,4 @@ files.each do |file|
   end
 end
 abort errors.uniq.join("\n") unless errors.empty?
-puts "Checked local links and assets in #{files.length} HTML files (external URLs and fragments skipped)."
+puts "Checked local links, assets, and responsive image candidates in #{files.length} HTML files (external URLs and fragments skipped)."

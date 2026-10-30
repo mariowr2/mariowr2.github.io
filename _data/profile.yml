@@ -1,15 +1,25 @@
 name: Mario Mendez
 headline: CTO and founder
 intro_heading: I like trying things I’m not quite ready for.
-intro: I’m Mario, a CTO and founder. I build software, run marathons, and head out on multi-day bike trips. I like the part where something that felt out of reach starts to feel possible.
-about: I’ve run several marathons and taken multi-day bike trips. I like mountains, cats, and finding out I can go a little further than I thought.
+intro: I'm Mario, founder and learner. I love challenging myself and working alongside great people.
+about: I am probably enjoying sports, reading or playing <a href="https://www.youtube.com/watch?v=0-aboMCVzKY" target="_blank" rel="noopener noreferrer" aria-label="Watch guitar video on YouTube (opens in a new tab)">🎸</a>. Every so often I'll try an endurance activity I should probably not be doing.
 updated: '2026-10-29'
 portrait:
   src: /img/kakto.jpg
   alt: Mario Mendez
 feature_media:
-  kind: ridgeline
-  src:
-  alt:
-  width: 1200
-  height: 800
+  kind: image
+  src: /assets/images/alpine-bike-1200.jpg
+  full_src: /assets/images/alpine-bike-4032.jpg
+  alt: A turquoise road bike resting in snow beneath rugged mountain peaks and a cloudy blue sky.
+  width: 4032
+  height: 3024
+  variants:
+    - src: /assets/images/alpine-bike-600.jpg
+      width: 600
+    - src: /assets/images/alpine-bike-1200.jpg
+      width: 1200
+    - src: /assets/images/alpine-bike-2400.jpg
+      width: 2400
+    - src: /assets/images/alpine-bike-4032.jpg
+      width: 4032

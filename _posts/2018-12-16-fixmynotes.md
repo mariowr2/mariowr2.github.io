@@ -20,4 +20,4 @@ Into a document where each of these slides would get its own page. For this proj
 </div>
 <br/>
 
-Doing this project was a very challenging and rewarding experience! The source code and setup instructions can be found [here](https://github.com/mariowr2/fixmynotes.com). Pull requests are welcome!
+Doing this project was a very challenging and rewarding experience! The source code and setup instructions can be found [here ↗](https://github.com/mariowr2/fixmynotes.com){:target="_blank" rel="noopener noreferrer" title="Opens in a new tab" aria-label="here (opens in a new tab)"}. Pull requests are welcome!

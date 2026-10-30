@@ -6,7 +6,7 @@ category: startups
 tags: ["Startup", "Seed Round"]
 ---
 
-Context: [https://evotrux.com](https://evotrux.com){:target="_blank"}
+Context: [https://evotrux.com ↗](https://evotrux.com){:target="_blank" rel="noopener noreferrer" title="Opens in a new tab" aria-label="Evotrux (opens in a new tab)"}
 
 Hello!
 
